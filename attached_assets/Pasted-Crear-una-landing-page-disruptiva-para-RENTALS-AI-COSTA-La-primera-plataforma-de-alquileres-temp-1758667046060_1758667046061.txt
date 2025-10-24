@@ -1,0 +1,101 @@
+Crear una landing page disruptiva para "RENTALS AI COSTA" - La primera plataforma de alquileres temporarios potenciada por Inteligencia Artificial en Monte Hermoso.
+
+CONCEPTO CENTRAL: Mostrar cómo la IA revoluciona la gestión de alquileres temporarios
+
+HERO SECTION IMPACTANTE:
+- Video background: Split screen mostrando "ANTES vs DESPUÉS"
+  * ANTES: Propietario perdiendo llamadas, calendarios vacíos
+  * DESPUÉS: Dashboard con reservas automáticas, notificaciones de pagos
+- Título principal animado: "¿CANSADO DE PERDER LA TEMPORADA?"
+- Subtítulo: "La primera plataforma que GARANTIZA que tu departamento nunca quede vacío"
+- Estadística llamativa: "95% de reservas se pierden por mala atención - NOSOTROS CAPTURAMOS EL 100%"
+- CTA principal: "QUIERO MAXIMIZAR MIS RESERVAS"
+
+SECCIÓN PROBLEMA/SOLUCIÓN:
+- Split en dos columnas:
+  
+COLUMNA IZQUIERDA - "LO QUE PASA HOY":
+- Iconos rojos con animaciones:
+  * 📱 Llamadas perdidas después de las 18hs
+  * ⏰ Respuestas tardías (clientes se van)
+  * 📅 Calendarios desactualizados
+  * 💸 Temporada perdida = $50,000 USD menos
+- Contador animado: "Reservas perdidas en tiempo real"
+
+COLUMNA DERECHA - "CON RENTALS AI":
+- Iconos verdes brillantes:
+  * 🤖 IA atiende 24/7/365
+  * ⚡ Respuesta en menos de 30 segundos
+  * 📊 Sincronización automática total
+  * 💰 300% más reservas garantizadas
+
+SECCIÓN IA MOTORS HUB:
+- Logo y certificación destacada
+- "POWERED BY IA MOTORS HUB - BAHÍA BLANCA"
+- 4 pillares tecnológicos con animaciones:
+  1. CHATBOTS CONVERSACIONALES: "Atienden como humanos, trabajan como máquinas"
+  2. AGENTES IA: "Califican, siguen y cierran automáticamente"
+  3. SINCRONIZACIÓN TOTAL: "Calendarios, pagos, facturas en tiempo real"
+  4. ANALYTICS AVANZADOS: "Cada consulta monitoreada y optimizada"
+
+DEMO INTERACTIVO:
+- Simulador de chat en vivo
+- Muestra cómo responde la IA a consultas reales
+- Contador en tiempo real de "Consultas Atendidas Hoy"
+- Timeline de "De consulta a reserva confirmada en 3 minutos"
+
+SECCIÓN DE PROPIEDADES:
+- Grid premium pero con twist tecnológico
+- Cada propiedad muestra:
+  * Ocupación en tiempo real
+  * "IA atendió 47 consultas hoy"
+  * "12 reservas cerradas automáticamente"
+  * Precio dinámico basado en demanda
+
+TESTIMONIALES POTENTES:
+- Videos cortos de propietarios:
+  * "Pasé de 30% a 95% de ocupación"
+  * "La IA cerró reservas mientras dormía"
+  * "Jamás perdí una consulta en temporada alta"
+- Casos de éxito con números reales
+
+GARANTÍA PROMINENTE:
+- Sección completa dedicada a:
+  * "GARANTÍA 300% MÁS RESERVAS O DINERO DEVUELTO"
+  * "PRIMERA TEMPORADA GRATIS SI NO CUMPLIMOS"
+  * Timer de cuenta regresiva: "Quedan X días para temporada 2025"
+
+TECNOLOGÍA VISIBLE:
+- Dashboard preview en tiempo real
+- Notificaciones simuladas apareciendo
+- Gráficos de conversión en vivo
+- API integrations visuales
+
+CTAs ESTRATÉGICOS:
+- "QUIERO LA DEMO EN VIVO" (botón principal)
+- "CALCULAR MI POTENCIAL DE INGRESOS"
+- "HABLAR CON UN ESPECIALISTA IA"
+- WhatsApp flotante: "Consultá con nuestro agente IA"
+
+FOOTER CON CREDIBILIDAD:
+- Certificaciones de IA Motors Hub
+- Partners tecnológicos
+- Métricas de rendimiento en tiempo real
+- "Procesamos +1000 consultas diarias"
+
+ELEMENTOS INTERACTIVOS ESPECIALES:
+- Calculadora de "Ingresos Perdidos vs. Potenciales"
+- Mapa de calor de consultas en tiempo real
+- Simulador de temporada alta
+- Chat IA que realmente funciona en la página
+- Notificaciones push simuladas de reservas
+
+ANIMACIONES CLAVE:
+- Transiciones smooth entre "problema" y "solución"
+- Contadores que incrementan en tiempo real
+- Efectos de "typing" en conversaciones IA
+- Parallax en secciones tecnológicas
+- Hover effects que muestran "behind the scenes" de la IA
+
+TECNOLOGÍAS:
+React + Framer Motion + Lottie animations + Real-time charts + WebSocket simulado para demos en vivo
