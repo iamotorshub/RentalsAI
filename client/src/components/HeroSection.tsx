@@ -57,10 +57,10 @@ export default function HeroSection() {
             <img
               src={image}
               alt={`Monte Hermoso Property ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center brightness-105 scale-105"
             />
-            {/* ✅ CORREGIDO: Opacidad reducida de 80%/60% a 30%/20% */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-primary/20 to-transparent"></div>
+            {/* Overlay oscuro sutil para mejorar legibilidad del texto */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30"></div>
           </div>
         ))}
       </div>
@@ -92,15 +92,15 @@ export default function HeroSection() {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-[0_6px_12px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">
           GESTIÓN INTELIGENTE
           <br />
-          <span className="text-golden">PARA TUS ALQUILERES</span>
+          <span className="text-golden drop-shadow-[0_6px_12px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">PARA TUS ALQUILERES</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-4xl mx-auto">
-          Integración directa con <span className="font-bold text-golden">Airbnb, Booking y más</span> + Soporte completo para maximizar tu ocupación
+        <p className="text-xl md:text-2xl text-white font-bold mb-4 max-w-4xl mx-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">
+          Integración directa con <span className="font-bold text-golden drop-shadow-[0_4px_8px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">Airbnb, Booking y más</span> + Soporte completo para maximizar tu ocupación
         </p>
 
         {/* Key Benefits */}
@@ -151,6 +151,10 @@ export default function HeroSection() {
         <Button
           size="lg"
           className="bg-golden hover:bg-golden/90 text-golden-foreground font-bold text-xl px-12 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+          onClick={() => {
+            const event = new CustomEvent('openContactForm', { detail: { source: 'Ver Demo en Vivo - Hero' } });
+            window.dispatchEvent(event);
+          }}
           data-testid="button-main-cta"
         >
           VER DEMO EN VIVO
