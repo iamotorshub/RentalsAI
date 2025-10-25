@@ -86,30 +86,31 @@ export default function GuaranteeSection() {
               className="p-8 hover-elevate transition-all duration-300 hover:border-golden/50 relative overflow-hidden group"
               data-testid={`card-guarantee-${index}`}
             >
-              {/* ✅ CORREGIDO: Opacidad aumentada de opacity-0 a opacity-30 en hover */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500">
+              {/* Imagen de fondo única profesional con overlay para legibilidad */}
+              <div className="absolute inset-0">
                 <img
-                  src={`/images/hero-${(index % 7) + 1}.png`}
+                  src="/images/hero-6.png"
                   alt=""
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center brightness-130 saturate-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
               </div>
 
               <div className="text-center relative z-10">
-                <div className="mx-auto w-16 h-16 bg-golden/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <guarantee.icon className="w-8 h-8 text-golden" />
+                <div className="mx-auto w-16 h-16 bg-golden/30 backdrop-blur-md rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl border border-golden/20">
+                  <guarantee.icon className="w-8 h-8 text-golden drop-shadow-[0_4px_8px_rgba(0,0,0,1)]" />
                 </div>
 
-              <h3 className="font-bold text-xl mb-4 text-golden">
+              <h3 className="font-bold text-xl mb-4 text-golden drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_4px_rgb(0_0_0)]">
                 {guarantee.title}
               </h3>
 
-              <p className="text-muted-foreground mb-6">
+              <p className="text-white font-bold mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_4px_rgb(0_0_0)] leading-relaxed">
                 {guarantee.description}
               </p>
 
-              <div className="p-3 bg-background/50 rounded-lg">
-                <p className="text-sm text-muted-foreground">
+              <div className="p-4 bg-black/40 backdrop-blur-sm rounded-lg border border-white/30">
+                <p className="text-sm text-white font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_4px_rgb(0_0_0)]">
                   {guarantee.terms}
                 </p>
               </div>
@@ -119,45 +120,49 @@ export default function GuaranteeSection() {
         </div>
 
         {/* Central Commitment Statement */}
-        <Card className="p-12 text-center bg-gradient-to-br from-golden/10 via-golden/5 to-transparent border-golden/30 mb-12 relative overflow-hidden">
-          {/* ✅ CORREGIDO: Opacidad aumentada de opacity-20 a opacity-40 */}
-          <div className="absolute inset-0 opacity-40">
+        <Card className="p-12 text-center border-golden/30 mb-12 relative overflow-hidden">
+          {/* Imagen de fondo única profesional con overlay para legibilidad */}
+          <div className="absolute inset-0">
             <img
-              src="/images/hero-3.png"
+              src="/images/hero-7.png"
               alt=""
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center brightness-130 saturate-110"
             />
+            <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/25"></div>
           </div>
           
           <div className="relative z-10">
-            <Award className="w-16 h-16 text-golden mx-auto mb-6 animate-[fadeInUp_0.6s_ease-out]" />
+            <Award className="w-16 h-16 text-golden mx-auto mb-6 animate-[fadeInUp_0.6s_ease-out] drop-shadow-[0_4px_12px_rgba(0,0,0,1)]" />
 
-            <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 animate-[fadeInUp_0.6s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
-              NUESTRO <span className="text-golden">COMPROMISO</span>
+            <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 text-white animate-[fadeInUp_0.6s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards] drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_2px_2px_6px_rgb(0_0_0)]">
+              NUESTRO <span className="text-golden drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_2px_2px_6px_rgb(0_0_0)]">COMPROMISO</span>
             </h3>
 
-            <p className="text-xl text-muted-foreground mb-8 max-w-4xl mx-auto animate-[fadeInUp_0.6s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
-              Te garantizamos una <span className="font-bold text-golden">configuración perfecta</span>,
+            <p className="text-xl text-white font-bold mb-8 max-w-4xl mx-auto animate-[fadeInUp_0.6s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards] drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_4px_rgb(0_0_0)] leading-relaxed">
+              Te garantizamos una <span className="font-black text-golden drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_4px_rgb(0_0_0)]">configuración perfecta</span>,
               integración completa con todas tus plataformas existentes, y
-              <span className="font-bold text-golden"> soporte especializado continuo</span> para maximizar tu ocupación.
+              <span className="font-black text-golden drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_4px_rgb(0_0_0)]"> soporte especializado continuo</span> para maximizar tu ocupación.
             </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Badge className="bg-success text-success-foreground px-4 py-2 animate-[fadeInUp_0.6s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
+            <Badge className="bg-success text-success-foreground px-4 py-2 animate-[fadeInUp_0.6s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards] shadow-lg">
               Soporte Incluido
             </Badge>
-            <Badge className="bg-primary text-primary-foreground px-4 py-2 animate-[fadeInUp_0.6s_ease-out_0.7s] opacity-0 [animation-fill-mode:forwards]">
+            <Badge className="bg-primary text-primary-foreground px-4 py-2 animate-[fadeInUp_0.6s_ease-out_0.7s] opacity-0 [animation-fill-mode:forwards] shadow-lg">
               Integración Completa
             </Badge>
-            <Badge className="bg-accent text-accent-foreground px-4 py-2 animate-[fadeInUp_0.6s_ease-out_0.8s] opacity-0 [animation-fill-mode:forwards]">
+            <Badge className="bg-accent text-accent-foreground px-4 py-2 animate-[fadeInUp_0.6s_ease-out_0.8s] opacity-0 [animation-fill-mode:forwards] shadow-lg">
               Sin Costos Ocultos
             </Badge>
           </div>
 
           <Button
             size="lg"
-            className="bg-golden hover:bg-golden/90 text-golden-foreground text-xl px-12 py-6 rounded-full shadow-2xl animate-[fadeInUp_0.6s_ease-out_1s] opacity-0 [animation-fill-mode:forwards]"
-            onClick={() => console.log('Commitment CTA clicked')}
+            className="bg-golden hover:bg-golden/90 text-golden-foreground text-xl font-bold px-12 py-6 rounded-full shadow-2xl animate-[fadeInUp_0.6s_ease-out_1s] opacity-0 [animation-fill-mode:forwards]"
+            onClick={() => {
+              const event = new CustomEvent('openContactForm', { detail: { source: 'Agendar Demo Personalizada' } });
+              window.dispatchEvent(event);
+            }}
             data-testid="button-commitment-cta"
           >
             AGENDAR DEMO PERSONALIZADA
