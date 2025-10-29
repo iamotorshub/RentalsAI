@@ -76,37 +76,87 @@ export async function registerRoutes(app: Express): Promise<Server> {
         throw new Error("Error al enviar el email al equipo");
       }
 
-      // Cuerpo del mail de confirmación al cliente
+      // Cuerpo del mail de confirmación al cliente (diseño profesional con logo)
       const clientEmailBody = `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #2563eb;">¡Gracias por contactarnos, ${nombre}!</h2>
-          <p>Hemos recibido tu solicitud de <strong>${tipo.toLowerCase()}</strong>.</p>
-          <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
-          <h3 style="color: #1f2937;">Detalles de tu solicitud:</h3>
-          ${
-            fecha && hora
-              ? `<p><strong>📅 Fecha y hora:</strong> ${fecha} a las ${hora}</p>`
-              : ""
-          }
-          <p><strong>📧 Email:</strong> ${email}</p>
-          <p><strong>📱 WhatsApp:</strong> ${whatsapp}</p>
-          ${
-            webInstagram
-              ? `<p><strong>🌐 Web/Instagram:</strong> ${webInstagram}</p>`
-              : ""
-          }
-          ${
-            descripcion
-              ? `<p><strong>💬 Mensaje:</strong> ${descripcion}</p>`
-              : ""
-          }
-          <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
-          <p>Nuestro equipo se pondrá en contacto contigo pronto para confirmar los detalles.</p>
-          <p style="margin-top: 30px; color: #6b7280; font-size: 14px;">
-            Saludos,<br>
-            <strong>Equipo Rentals AI</strong>
-          </p>
-        </div>
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="margin: 0; padding: 0; background-color: #f3f4f6;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f3f4f6; padding: 40px 20px;">
+            <tr>
+              <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                  <!-- Header con Logo -->
+                  <tr>
+                    <td style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                      <img src="${process.env.APP_URL || 'https://rentalsai.com'}/images/logo-rentals-ai.png" alt="Rentals AI" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+                      <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: bold;">¡Gracias por contactarnos!</h1>
+                    </td>
+                  </tr>
+
+                  <!-- Contenido -->
+                  <tr>
+                    <td style="padding: 40px 30px;">
+                      <p style="font-size: 16px; color: #1f2937; line-height: 1.6; margin-bottom: 20px;">
+                        Hola <strong>${nombre}</strong>,
+                      </p>
+                      <p style="font-size: 16px; color: #1f2937; line-height: 1.6; margin-bottom: 30px;">
+                        Hemos recibido tu solicitud de <strong style="color: #6366f1;">${tipo}</strong> y estamos muy contentos de poder ayudarte a optimizar tu propiedad.
+                      </p>
+
+                      <!-- Detalles en Card -->
+                      <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 30px;">
+                        <tr>
+                          <td style="padding: 20px;">
+                            <h3 style="color: #6366f1; margin: 0 0 15px 0; font-size: 18px;">📋 Detalles de tu solicitud:</h3>
+                            ${fecha && hora ? `<p style="margin: 8px 0; color: #4b5563;"><strong>📅 Fecha y hora:</strong> ${fecha} a las ${hora}</p>` : ''}
+                            <p style="margin: 8px 0; color: #4b5563;"><strong>📧 Email:</strong> ${email}</p>
+                            <p style="margin: 8px 0; color: #4b5563;"><strong>📱 WhatsApp:</strong> ${whatsapp}</p>
+                            ${webInstagram ? `<p style="margin: 8px 0; color: #4b5563;"><strong>🌐 Web/Instagram:</strong> ${webInstagram}</p>` : ''}
+                            ${descripcion ? `<p style="margin: 8px 0; color: #4b5563;"><strong>💬 Tu mensaje:</strong><br>${descripcion}</p>` : ''}
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Próximos pasos -->
+                      <div style="background-color: #eff6ff; border-left: 4px solid #6366f1; padding: 15px 20px; border-radius: 4px; margin-bottom: 30px;">
+                        <p style="margin: 0; color: #1e40af; font-weight: bold;">✅ ¿Qué sigue ahora?</p>
+                        <p style="margin: 10px 0 0 0; color: #1e3a8a; font-size: 14px;">
+                          Nuestro equipo revisará tu solicitud y se pondrá en contacto contigo a la brevedad para confirmar los detalles y agendar una reunión.
+                        </p>
+                      </div>
+
+                      <p style="font-size: 14px; color: #6b7280; line-height: 1.6;">
+                        Si tenés alguna pregunta urgente, no dudes en responder este email.
+                      </p>
+                    </td>
+                  </tr>
+
+                  <!-- Footer -->
+                  <tr>
+                    <td style="background-color: #111827; padding: 30px; text-align: center; border-radius: 0 0 8px 8px;">
+                      <p style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">Equipo Rentals AI</p>
+                      <p style="color: #9ca3af; margin: 0 0 15px 0; font-size: 14px;">Powered by</p>
+                      <img src="${process.env.APP_URL || 'https://rentalsai.com'}/images/logo-iamotorshub.png" alt="IA MOTORSHUB" style="max-width: 150px; height: auto; margin-bottom: 15px;">
+                      <p style="color: #9ca3af; margin: 10px 0 5px 0; font-size: 13px;">
+                        📍 Bahía Blanca, Buenos Aires, Argentina<br>
+                        📧 contacto@iamotorshub.com<br>
+                        📱 WhatsApp: +54 9 291 520-6692
+                      </p>
+                      <p style="color: #6b7280; margin: 15px 0 0 0; font-size: 11px;">
+                        © ${new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </body>
+        </html>
       `;
 
       // Enviar correo de confirmación al cliente (también usando tu cuenta de contacto)

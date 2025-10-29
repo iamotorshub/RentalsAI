@@ -1,0 +1,134 @@
+import { MapPin, Mail, Phone, ExternalLink } from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      {/* Decorative top border */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-golden to-accent"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          {/* Logo Rentals AI */}
+          <div className="text-center md:text-left">
+            <img
+              src="/images/logo-rentals-ai.png"
+              alt="Rentals AI"
+              className="h-16 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
+              onError={(e) => {
+                // Fallback si no existe el logo
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+            <div className="hidden">
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-accent to-golden bg-clip-text text-transparent">
+                Rentals AI
+              </h3>
+            </div>
+            <p className="text-gray-400 mt-4 leading-relaxed">
+              Transformamos propiedades en máquinas de generar ingresos con IA de última generación.
+            </p>
+          </div>
+
+          {/* Información de Contacto */}
+          <div className="text-center md:text-left">
+            <h4 className="text-xl font-bold mb-4 text-golden">Contacto</h4>
+            <div className="space-y-3 text-gray-300">
+              <a
+                href="tel:+5492915206692"
+                className="flex items-center gap-3 hover:text-golden transition-colors group justify-center md:justify-start"
+              >
+                <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
+                  <Phone className="w-4 h-4 text-accent" />
+                </div>
+                <span>+54 9 291 520-6692</span>
+              </a>
+
+              <a
+                href="mailto:contacto@iamotorshub.com"
+                className="flex items-center gap-3 hover:text-golden transition-colors group justify-center md:justify-start"
+              >
+                <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
+                  <Mail className="w-4 h-4 text-accent" />
+                </div>
+                <span>contacto@iamotorshub.com</span>
+              </a>
+
+              <div className="flex items-center gap-3 justify-center md:justify-start">
+                <div className="p-2 bg-accent/10 rounded-lg">
+                  <MapPin className="w-4 h-4 text-accent" />
+                </div>
+                <span>Bahía Blanca, Buenos Aires</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Enlaces Rápidos */}
+          <div className="text-center md:text-left">
+            <h4 className="text-xl font-bold mb-4 text-golden">Empresa</h4>
+            <div className="space-y-3">
+              <a
+                href="https://wa.me/5492915206692"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors justify-center md:justify-start group"
+              >
+                <span>WhatsApp</span>
+                <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </a>
+
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('openContactForm', { detail: { source: 'Footer' }}))}
+                className="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors justify-center md:justify-start w-full md:w-auto"
+              >
+                <span>Solicitar Demo</span>
+              </button>
+
+              <a
+                href="#tecnologia"
+                className="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors justify-center md:justify-start"
+              >
+                <span>Nuestra Tecnología</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-700 my-8"></div>
+
+        {/* Powered by IA MOTORSHUB */}
+        <div className="text-center">
+          <p className="text-gray-400 text-sm mb-4">Powered by</p>
+          <img
+            src="/images/logo-iamotorshub.png"
+            alt="IA MOTORSHUB"
+            className="h-12 mx-auto mb-6 filter drop-shadow-lg"
+            onError={(e) => {
+              // Fallback si no existe el logo
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling?.classList.remove('hidden');
+            }}
+          />
+          <div className="hidden">
+            <h3 className="text-2xl font-bold text-white mb-6">
+              IA MOTORSHUB
+            </h3>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-6">
+            <span>🚀 Inteligencia Artificial</span>
+            <span>•</span>
+            <span>💡 Soluciones Tecnológicas</span>
+            <span>•</span>
+            <span>🎯 Automatización de Negocios</span>
+          </div>
+
+          <p className="text-gray-500 text-xs">
+            © {new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
