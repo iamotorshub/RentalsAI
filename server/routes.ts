@@ -94,9 +94,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
                 <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                   <!-- Header con Logo -->
                   <tr>
-                    <td style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                      <img src="${BASE_URL}/images/rentals-ai-logo-blanco1.png" alt="Rentals AI" style="max-width: 200px; height: auto; margin-bottom: 20px;">
-                      <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: bold;">¡Gracias por contactarnos!</h1>
+                    <td style="background: #ffffff; padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0; border-bottom: 3px solid #6366f1;">
+                      <img src="${BASE_URL}/images/rentals-ai-logo.png" alt="Rentals AI" style="max-width: 220px; height: auto; margin-bottom: 20px;">
+                      <h1 style="color: #1f2937; margin: 0; font-size: 28px; font-weight: bold;">¡Gracias por contactarnos!</h1>
                     </td>
                   </tr>
 
@@ -140,16 +140,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
                   <!-- Footer -->
                   <tr>
-                    <td style="background-color: #111827; padding: 30px; text-align: center; border-radius: 0 0 8px 8px;">
+                    <td style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); padding: 30px; text-align: center; border-radius: 0 0 8px 8px;">
                       <p style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">Equipo Rentals AI</p>
-                      <p style="color: #9ca3af; margin: 0 0 15px 0; font-size: 14px;">Powered by</p>
+                      <p style="color: #e0e7ff; margin: 0 0 15px 0; font-size: 14px;">Powered by</p>
                       <img src="${BASE_URL}/images/logo-footer.png" alt="IA MOTORSHUB" style="max-width: 150px; height: auto; margin-bottom: 15px;">
-                      <p style="color: #9ca3af; margin: 10px 0 5px 0; font-size: 13px;">
+                      <p style="color: #e0e7ff; margin: 10px 0 5px 0; font-size: 13px;">
                         📍 Bahía Blanca, Buenos Aires, Argentina<br>
                         📧 contacto@iamotorshub.com<br>
                         📱 WhatsApp: +54 9 291 520-6692
                       </p>
-                      <p style="color: #6b7280; margin: 15px 0 0 0; font-size: 11px;">
+                      <p style="color: #bfdbfe; margin: 15px 0 0 0; font-size: 11px;">
                         © ${new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
                       </p>
                     </td>

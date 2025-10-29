@@ -11,9 +11,9 @@ export default function Footer() {
           {/* Logo Rentals AI */}
           <div className="text-center md:text-left">
             <img
-              src="/images/rentals-ai-logo-blanco1.png"
+              src="/images/logo-rentals-ai-4.png"
               alt="Rentals AI"
-              className="h-16 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
+              className="h-20 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
               onError={(e) => {
                 // Fallback si no existe el logo
                 e.currentTarget.style.display = 'none';
