@@ -4,6 +4,7 @@ import { getClaude } from "./claude";
 import Anthropic from "@anthropic-ai/sdk";
 
 // Configuración de Resend
+// IMPORTANTE: Asegúrate de tener la variable de entorno RESEND_API_KEY configurada
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const EMAIL_TO = "contacto@iamotorshub.com";
 
@@ -26,6 +27,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       if (!nombre || !whatsapp || !email || !tipo) {
         return res.status(400).json({ error: "Faltan campos requeridos" });
+      }
+
+      if (!RESEND_API_KEY) {
+        console.error("RESEND_API_KEY no está configurada");
+        return res.status(500).json({
+          error: "Configuración de email no disponible. Por favor contacta al administrador."
+        });
       }
 
       // Cuerpo del mail interno
@@ -63,6 +71,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
       if (!responseTeam.ok) {
+        const errorData = await responseTeam.text();
+        console.error("Error al enviar email al equipo:", errorData);
         throw new Error("Error al enviar el email al equipo");
       }
 
@@ -115,17 +125,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }),
       });
 
-      if (!responseClient.ok) {
-        console.warn("Error al enviar email de confirmación al cliente");
-      }
-
       const dataTeam = await responseTeam.json();
-      const dataClient = await responseClient.json();
+      let dataClient = null;
+
+      if (!responseClient.ok) {
+        const errorData = await responseClient.text();
+        console.error("Error al enviar email de confirmación al cliente:", errorData);
+      } else {
+        dataClient = await responseClient.json();
+      }
 
       res.json({
         success: true,
         teamEmailId: dataTeam.id,
-        clientEmailId: dataClient.id,
+        clientEmailId: dataClient?.id || null,
+        message: "Solicitud enviada correctamente. Recibirás una confirmación por email."
       });
     } catch (error) {
       console.error("Error sending contact email:", error);
