@@ -92,7 +92,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                   <!-- Header con Logo -->
                   <tr>
                     <td style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                      <img src="${process.env.APP_URL || 'https://rentalsai.com'}/images/logo-rentals-ai.png" alt="Rentals AI" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+                      <img src="${process.env.APP_URL || 'https://rentalsai.com'}/images/rentals-ai-logo.png" alt="Rentals AI" style="max-width: 200px; height: auto; margin-bottom: 20px;">
                       <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: bold;">¡Gracias por contactarnos!</h1>
                     </td>
                   </tr>
@@ -140,7 +140,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                     <td style="background-color: #111827; padding: 30px; text-align: center; border-radius: 0 0 8px 8px;">
                       <p style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">Equipo Rentals AI</p>
                       <p style="color: #9ca3af; margin: 0 0 15px 0; font-size: 14px;">Powered by</p>
-                      <img src="${process.env.APP_URL || 'https://rentalsai.com'}/images/logo-iamotorshub.png" alt="IA MOTORSHUB" style="max-width: 150px; height: auto; margin-bottom: 15px;">
+                      <img src="${process.env.APP_URL || 'https://rentalsai.com'}/images/logo-footer.png" alt="IA MOTORSHUB" style="max-width: 150px; height: auto; margin-bottom: 15px;">
                       <p style="color: #9ca3af; margin: 10px 0 5px 0; font-size: 13px;">
                         📍 Bahía Blanca, Buenos Aires, Argentina<br>
                         📧 contacto@iamotorshub.com<br>

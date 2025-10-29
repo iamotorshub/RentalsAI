@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Logo Rentals AI */}
           <div className="text-center md:text-left">
             <img
-              src="/images/logo-rentals-ai.png"
+              src="/images/rentals-ai-logo.png"
               alt="Rentals AI"
               className="h-16 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
               onError={(e) => {
@@ -101,7 +101,7 @@ export default function Footer() {
         <div className="text-center">
           <p className="text-gray-400 text-sm mb-4">Powered by</p>
           <img
-            src="/images/logo-iamotorshub.png"
+            src="/images/logo-footer.png"
             alt="IA MOTORSHUB"
             className="h-12 mx-auto mb-6 filter drop-shadow-lg"
             onError={(e) => {
