@@ -5,13 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Badge } from "@/components/ui/badge";
-import { useClaude } from "@/hooks/use-claude";
 import {
   Calculator,
   DollarSign,
   TrendingUp,
-  Bot,
-  Sparkles,
   AlertTriangle,
   CheckCircle
 } from "lucide-react";
@@ -20,8 +17,6 @@ export default function IncomeCalculator() {
   const [currentOccupancy, setCurrentOccupancy] = useState([45]);
   const [averageRate, setAverageRate] = useState([150]);
   const [propertyType, setPropertyType] = useState("apartment");
-  const [aiRecommendations, setAiRecommendations] = useState<string>("");
-  const { optimizeIncome, isLoading } = useClaude();
 
   // Calculation logic - Realistic for Monte Hermoso (5 month season)
   const seasonDays = 150; // 5 months main season (Dec-April)
@@ -78,24 +73,6 @@ export default function IncomeCalculator() {
 
   const adjustedIncrease = totalIncrease * getMultiplier();
   const adjustedNetProfit = adjustedIncrease - systemCost;
-
-  const handleGetAIRecommendations = async () => {
-    try {
-      const response = await optimizeIncome({
-        currentIncome: currentAnnualIncome,
-        propertyType: propertyTypes.find(p => p.id === propertyType)?.label || "Propiedad",
-        location: "Monte Hermoso",
-        amenities: ["WiFi", "Aire Acondicionado", "Cocina Equipada", "Estacionamiento"]
-      });
-
-      if (response.success) {
-        setAiRecommendations(response.message);
-      }
-    } catch (error) {
-      console.error("Error getting AI recommendations:", error);
-      setAiRecommendations("Error al obtener recomendaciones. Inténtalo de nuevo.");
-    }
-  };
 
   return (
     <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-100 via-slate-50 to-gray-200">
@@ -293,35 +270,6 @@ export default function IncomeCalculator() {
               </div>
             </Card>
 
-            {/* AI Recommendations */}
-            <Card className="p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <Bot className="w-6 h-6 text-accent" />
-                <h3 className="text-2xl font-bold">Recomendaciones IA</h3>
-              </div>
-              {isLoading ? (
-                <div className="flex justify-center items-center h-32">
-                  <p>Cargando recomendaciones...</p>
-                </div>
-              ) : aiRecommendations ? (
-                <div className="text-sm text-muted-foreground space-y-4">
-                  {aiRecommendations.split('\n').map((line, index) => (
-                    <p key={index}>{line}</p>
-                  ))}
-                </div>
-              ) : (
-                <Button
-                  size="lg"
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6"
-                  onClick={handleGetAIRecommendations}
-                  data-testid="button-get-ai-recommendations"
-                >
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Obtener Recomendaciones IA
-                </Button>
-              )}
-            </Card>
-
             {/* Warning */}
             <Card className="p-6 bg-destructive/5 border-destructive/20">
               <div className="flex items-start gap-3">
@@ -341,11 +289,10 @@ export default function IncomeCalculator() {
               <Button
                 size="lg"
                 className="w-full bg-golden hover:bg-golden/90 text-golden-foreground text-lg py-6"
-                onClick={() => console.log('Calculator CTA clicked', {
-                  currentIncome: currentAnnualIncome,
-                  projectedIncome: Math.round(aiAnnualIncome * getMultiplier()),
-                  increase: Math.round(adjustedIncrease)
-                })}
+                onClick={() => {
+                  const event = new CustomEvent('openContactForm', { detail: { source: 'Conseguir Estos Resultados Ahora' } });
+                  window.dispatchEvent(event);
+                }}
                 data-testid="button-calculator-cta"
               >
                 Conseguir Estos Resultados Ahora
