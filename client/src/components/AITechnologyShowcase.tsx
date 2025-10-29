@@ -71,15 +71,15 @@ export default function AITechnologyShowcase() {
       <div className="absolute inset-0 z-0">
         <motion.img
           key={selectedPillar}
-          src="/images/hero-3.png"
+          src="/images/hero-2.png"
           alt="Fondo tecnológico"
-          className="w-full h-full object-cover object-center brightness-100 saturate-110 contrast-105 scale-100 filter"
+          className="w-full h-full object-cover object-center brightness-110 saturate-120 contrast-110 scale-100 filter"
           style={{ imageRendering: '-webkit-optimize-contrast' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/50 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/50" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

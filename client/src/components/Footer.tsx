@@ -6,8 +6,8 @@ export default function Footer() {
       {/* Decorative top border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-golden to-accent"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Logo Rentals AI */}
           <div className="text-center md:text-left">
             <img
@@ -85,17 +85,20 @@ export default function Footer() {
               </button>
 
               <a
-                href="#tecnologia"
-                className="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors justify-center md:justify-start"
+                href="https://www.iamotorshub.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors justify-center md:justify-start group"
               >
                 <span>Nuestra Tecnología</span>
+                <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 my-8"></div>
+        <div className="border-t border-gray-700 my-6"></div>
 
         {/* Powered by IA MOTORSHUB */}
         <div className="text-center">
