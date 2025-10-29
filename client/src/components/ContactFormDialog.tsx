@@ -29,12 +29,8 @@ export default function ContactFormDialog({ open, onOpenChange, source = "" }: C
   const [selectedDate, setSelectedDate] = useState<Date>();
   const [selectedTime, setSelectedTime] = useState<string>();
   const [isSuccess, setIsSuccess] = useState(false);
-  const [formData, setFormData] = useState<ContactFormData | null>(null);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormData>();
-
-  // Configuración de WhatsApp
-  const WHATSAPP_EMPRESA = "5492915206692"; // Número de IA MOTORSHUB (del WhatsAppCTA.tsx)
 
   // Horarios disponibles de 11:00 a 20:00 cada 30 minutos
   const timeSlots = [];
@@ -54,45 +50,8 @@ export default function ContactFormDialog({ open, onOpenChange, source = "" }: C
       if (!response.ok) throw new Error('Error al enviar el email');
       return response.json();
     },
-    onSuccess: (_, variables) => {
+    onSuccess: () => {
       setIsSuccess(true);
-
-      // Mensaje de WhatsApp para la EMPRESA
-      const whatsappMensajeEmpresa = `🔔 *Nueva Solicitud - Rentals AI*\n\n` +
-        `📋 *Tipo:* ${variables.tipo}\n` +
-        `👤 *Nombre:* ${variables.nombre}\n` +
-        `📱 *WhatsApp:* ${variables.whatsapp}\n` +
-        `📧 *Email:* ${variables.email}\n` +
-        (variables.webInstagram ? `🌐 *Web/Instagram:* ${variables.webInstagram}\n` : '') +
-        (variables.descripcion ? `💬 *Descripción:* ${variables.descripcion}\n` : '') +
-        (variables.fecha && variables.hora ? `📅 *Fecha y hora:* ${variables.fecha} a las ${variables.hora}\n` : '') +
-        `\n📍 *Fuente:* ${source || 'Web'}`;
-
-      const whatsappUrlEmpresa = `https://wa.me/${WHATSAPP_EMPRESA}?text=${encodeURIComponent(whatsappMensajeEmpresa)}`;
-
-      // Mensaje de WhatsApp para el CLIENTE
-      const clienteWhatsapp = variables.whatsapp.replace(/[^0-9]/g, ''); // Limpiar número
-      const whatsappMensajeCliente = `¡Hola ${variables.nombre}! 👋\n\n` +
-        `Gracias por tu solicitud de *${variables.tipo}* en Rentals AI.\n\n` +
-        `Hemos recibido tu información:\n` +
-        (variables.fecha && variables.hora ? `📅 Fecha: ${variables.fecha} a las ${variables.hora}\n` : '') +
-        `\n✅ Confirmamos que nos pondremos en contacto contigo pronto.\n\n` +
-        `Mientras tanto, si tenés alguna consulta, podés responder este mensaje.\n\n` +
-        `*Equipo Rentals AI*\n` +
-        `IA MOTORSHUB - Bahía Blanca`;
-
-      const whatsappUrlCliente = `https://wa.me/${clienteWhatsapp}?text=${encodeURIComponent(whatsappMensajeCliente)}`;
-
-      // Abrir WhatsApp para enviar a la empresa (delay 1 segundo)
-      setTimeout(() => {
-        window.open(whatsappUrlEmpresa, '_blank', 'noopener,noreferrer');
-      }, 1000);
-
-      // Abrir WhatsApp para enviar al cliente (delay 2.5 segundos)
-      setTimeout(() => {
-        window.open(whatsappUrlCliente, '_blank', 'noopener,noreferrer');
-      }, 2500);
-
       setTimeout(() => {
         setIsSuccess(false);
         onOpenChange(false);
@@ -100,7 +59,7 @@ export default function ContactFormDialog({ open, onOpenChange, source = "" }: C
         setContactType(null);
         setSelectedDate(undefined);
         setSelectedTime(undefined);
-      }, 4000);
+      }, 3000);
     }
   });
 
@@ -136,18 +95,8 @@ export default function ContactFormDialog({ open, onOpenChange, source = "" }: C
               <Check className="w-8 h-8 text-success" />
             </div>
             <h3 className="text-2xl font-bold mb-2">¡Solicitud Enviada!</h3>
-            <p className="text-muted-foreground mb-4">
-              ✅ Email enviado a nuestro equipo y a tu correo
-            </p>
-            <p className="text-sm text-muted-foreground mb-2">
-              📱 Se abrirán 2 ventanas de WhatsApp:
-            </p>
-            <ul className="text-xs text-muted-foreground text-left mx-auto max-w-xs space-y-1">
-              <li>• WhatsApp a nuestro equipo (notificación)</li>
-              <li>• WhatsApp de confirmación para ti</li>
-            </ul>
-            <p className="text-xs text-muted-foreground mt-3">
-              Solo haz click en "Enviar" en cada ventana
+            <p className="text-muted-foreground">
+              Nos pondremos en contacto contigo a la brevedad.
             </p>
           </div>
         </DialogContent>
