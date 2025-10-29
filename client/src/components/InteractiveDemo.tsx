@@ -266,7 +266,10 @@ export default function InteractiveDemo() {
             <Button
               size="lg"
               className="w-full bg-golden hover:bg-golden/90 text-golden-foreground"
-              onClick={() => console.log('Interactive demo CTA clicked')}
+              onClick={() => {
+                const event = new CustomEvent('openContactForm', { detail: { source: 'Quiero Este Sistema Para Mi Propiedad' } });
+                window.dispatchEvent(event);
+              }}
               data-testid="button-demo-cta"
             >
               Quiero Este Sistema Para Mi Propiedad

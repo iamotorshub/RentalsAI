@@ -325,7 +325,10 @@ export default function TestimonialsSection() {
           <Button
             size="lg"
             className="bg-golden hover:bg-golden/90 text-golden-foreground"
-            onClick={() => console.log('Join success stories clicked')}
+            onClick={() => {
+              const event = new CustomEvent('openContactForm', { detail: { source: 'Quiero Ser el Próximo Caso de Éxito' } });
+              window.dispatchEvent(event);
+            }}
             data-testid="button-join-success"
           >
             Quiero Ser el Próximo Caso de Éxito

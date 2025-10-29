@@ -328,7 +328,10 @@ export default function PropertyGrid() {
           <Button
             size="lg"
             className="bg-accent hover:bg-accent/90 text-accent-foreground"
-            onClick={() => console.log("Add property clicked")}
+            onClick={() => {
+              const event = new CustomEvent('openContactForm', { detail: { source: 'Agregar Mi Propiedad al Sistema' } });
+              window.dispatchEvent(event);
+            }}
             data-testid="button-add-property"
           >
             Agregar Mi Propiedad al Sistema
