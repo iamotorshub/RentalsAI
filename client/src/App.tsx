@@ -12,6 +12,7 @@ import GuaranteeSection from "./components/GuaranteeSection";
 import IncomeCalculator from "./components/IncomeCalculator";
 import WhatsAppCTA from "./components/WhatsAppCTA";
 import ContactFormDialog from "./components/ContactFormDialog";
+import Footer from "./components/Footer";
 
 function App() {
   const [contactFormOpen, setContactFormOpen] = useState(false);
@@ -42,6 +43,7 @@ function App() {
         <IncomeCalculator />
         <GuaranteeSection />
         <WhatsAppCTA />
+        <Footer />
         <ContactFormDialog
           open={contactFormOpen}
           onOpenChange={setContactFormOpen}
