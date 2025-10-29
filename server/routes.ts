@@ -95,7 +95,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                   <!-- Header con Logo -->
                   <tr>
                     <td style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                      <img src="${BASE_URL}/images/rentals-ai-logo.png" alt="Rentals AI" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+                      <img src="${BASE_URL}/images/rentals-ai-logo-blanco1.png" alt="Rentals AI" style="max-width: 200px; height: auto; margin-bottom: 20px;">
                       <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: bold;">¡Gracias por contactarnos!</h1>
                     </td>
                   </tr>
