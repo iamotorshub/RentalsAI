@@ -11,10 +11,9 @@ export default function Footer() {
           {/* Logo Rentals AI */}
           <div className="text-center md:text-left">
             <img
-              src="/images/RENTALAS AI CIRCULAR SIN FONDO.png"
+              src="/images/RENTALAS AI CIRCULAR SIN FONDO - TODO BLANCO.png"
               alt="Rentals AI"
               className="h-32 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
-              style={{ mixBlendMode: 'multiply', filter: 'brightness(1.2) contrast(1.1)' }}
               onError={(e) => {
                 // Fallback si no existe el logo
                 e.currentTarget.style.display = 'none';
