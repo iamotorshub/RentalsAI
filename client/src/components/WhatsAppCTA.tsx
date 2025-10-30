@@ -29,7 +29,7 @@ export default function WhatsAppCTA() {
   return (
     <>
       {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed top-6 right-6 z-50">
         {/* Chat Preview */}
         {isOpen && (
           <Card className="mb-4 w-80 p-0 shadow-2xl border-success/20 bg-background">
@@ -96,16 +96,6 @@ export default function WhatsAppCTA() {
         >
           <MessageCircle className="w-6 h-6" />
         </Button>
-        
-        {/* Tooltip */}
-        {!isOpen && (
-          <div className="absolute right-20 top-1/2 -translate-y-1/2 bg-background border border-border rounded-lg px-3 py-2 shadow-lg whitespace-nowrap">
-            <p className="text-sm font-medium">Consultá con nuestro agente IA</p>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full">
-              <div className="w-0 h-0 border-l-4 border-l-border border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
-            </div>
-          </div>
-        )}
       </div>
     </>
   );

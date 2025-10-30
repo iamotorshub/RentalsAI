@@ -57,7 +57,7 @@ export default function HeroSection() {
             <img
               src={image}
               alt={`Monte Hermoso Property ${index + 1}`}
-              className="w-full h-full object-cover object-center brightness-125 scale-105"
+              className="w-full h-full object-cover object-center brightness-150 contrast-110 saturate-110 scale-105"
             />
             {/* Overlay oscuro sutil para mejorar legibilidad del texto */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30"></div>
@@ -150,14 +150,15 @@ export default function HeroSection() {
         {/* Main CTA Button */}
         <Button
           size="lg"
-          className="bg-golden hover:bg-golden/90 text-golden-foreground font-bold text-xl px-12 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+          className="relative bg-gradient-to-r from-accent via-accent to-golden text-white font-bold text-lg px-12 py-7 rounded-full shadow-2xl overflow-hidden group hover:scale-105 transition-transform border-2 border-white/30"
           onClick={() => {
             const event = new CustomEvent('openContactForm', { detail: { source: 'Ver Demo en Vivo - Hero' } });
             window.dispatchEvent(event);
           }}
           data-testid="button-main-cta"
         >
-          VER DEMO EN VIVO
+          <span className="relative z-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">VER DEMO EN VIVO</span>
+          <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition duration-500 rounded-full"></div>
         </Button>
 
         {/* Secondary CTA */}
