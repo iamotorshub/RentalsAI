@@ -62,8 +62,9 @@ def main():
 
     # Archivos a procesar
     files_to_process = [
-        ("logo-rentals-ai-4.png", "logo-rentals-ai-4.png"),
-        ("rentals-ai-logo-blanco.png", "rentals-ai-logo-blanco.png"),
+        ("rentals-ai-logo.png", "rentals-ai-logo.png"),
+        ("rentals-ai-logo-blanco1.png", "rentals-ai-logo-blanco1.png"),
+        ("rentals-ai-logo-todo-blanco.png", "rentals-ai-logo-todo-blanco.png"),
         ("logo-footer.png", "logo-footer.png"),
     ]
 
