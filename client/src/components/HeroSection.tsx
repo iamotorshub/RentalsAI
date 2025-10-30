@@ -57,7 +57,7 @@ export default function HeroSection() {
             <img
               src={image}
               alt={`Monte Hermoso Property ${index + 1}`}
-              className="w-full h-full object-cover object-center brightness-105 scale-105"
+              className="w-full h-full object-cover object-center brightness-125 scale-105"
             />
             {/* Overlay oscuro sutil para mejorar legibilidad del texto */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30"></div>
