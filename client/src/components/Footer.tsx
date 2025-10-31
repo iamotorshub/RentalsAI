@@ -13,7 +13,7 @@ export default function Footer() {
             <img
               src="/images/rentalsai-finalsinfondo.png"
               alt="Rentals AI"
-              className="h-32 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
+              className="h-44 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
               onError={(e) => {
                 // Fallback si no existe el logo
                 e.currentTarget.style.display = 'none';
@@ -106,8 +106,8 @@ export default function Footer() {
           <img
             src="/images/logo-footer.png"
             alt="IA MOTORSHUB"
-            className="h-40 w-auto mx-auto mb-6"
-            style={{ maxWidth: '100%', objectFit: 'contain' }}
+            className="w-auto mx-auto mb-6"
+            style={{ height: '480px', maxWidth: '100%', objectFit: 'contain' }}
             onError={(e) => {
               // Fallback si no existe el logo
               e.currentTarget.style.display = 'none';
