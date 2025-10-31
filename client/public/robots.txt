@@ -1,0 +1,33 @@
+# robots.txt para RENTALS AI COSTA
+# Optimizado para SEO - Alquiler temporada Monte Hermoso y Bahía Blanca
+
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /assets/
+
+# Prioridad para bots principales
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Bloquear bots maliciosos
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Sitemap
+Sitemap: https://rentalsaicosta.com/sitemap.xml

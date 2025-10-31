@@ -371,3 +371,159 @@
     transform: translateY(0);
   }
 }
+
+/* ==================== RESPONSIVE OPTIMIZATIONS ==================== */
+/* Mobile First - Optimización para celulares y tablets */
+
+/* Base mobile styles */
+@media (max-width: 640px) {
+  body {
+    zoom: 1;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  /* Mejoras de touch para móviles */
+  a, button, [role="button"], input, select, textarea {
+    -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+    touch-action: manipulation;
+  }
+
+  /* Optimización de fuentes para móviles */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Mejoras de espaciado para dedos */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Scroll suave en iOS */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 641px) and (max-width: 1024px) {
+  body {
+    zoom: 0.95;
+  }
+
+  /* Optimización de columnas para tablets */
+  .container {
+    max-width: 95%;
+  }
+}
+
+/* Large tablets and small desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  body {
+    zoom: 0.92;
+  }
+}
+
+/* Portrait orientation adjustments */
+@media (orientation: portrait) {
+  .hide-portrait {
+    display: none;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 600px) {
+  body {
+    zoom: 0.85;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Aumentar áreas de toque en dispositivos táctiles */
+  button, a, input, select {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Reducir efectos hover en touch devices */
+  .hover-elevate:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* High DPI screens (Retina displays) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Dark mode improvements for mobile */
+@media (prefers-color-scheme: dark) {
+  @media (max-width: 640px) {
+    body {
+      background-color: hsl(var(--background));
+    }
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print optimization */
+@media print {
+  body {
+    zoom: 1;
+    background: white;
+    color: black;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Accessibility - Focus visible for keyboard navigation */
+@media (prefers-reduced-motion: no-preference) {
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    transition: outline-offset 0.2s ease;
+  }
+}
+
+/* Performance optimization - GPU acceleration */
+.gpu-accelerate {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Mobile safe areas (iPhone X and newer) */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* ==================== END RESPONSIVE OPTIMIZATIONS ==================== */
