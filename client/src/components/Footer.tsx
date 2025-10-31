@@ -106,7 +106,8 @@ export default function Footer() {
           <img
             src="/images/logo-footer.png"
             alt="IA MOTORSHUB"
-            className="h-32 w-auto mx-auto mb-6 filter drop-shadow-2xl"
+            className="h-40 w-auto mx-auto mb-6"
+            style={{ maxWidth: '100%', objectFit: 'contain' }}
             onError={(e) => {
               // Fallback si no existe el logo
               e.currentTarget.style.display = 'none';
