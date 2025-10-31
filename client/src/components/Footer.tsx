@@ -6,8 +6,8 @@ export default function Footer() {
       {/* Decorative top border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-golden to-accent"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid md:grid-cols-3 gap-8 mb-6">
           {/* Logo Rentals AI */}
           <div className="text-center md:text-left">
             <img
@@ -98,15 +98,15 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 my-6"></div>
+        <div className="border-t border-gray-700 my-4"></div>
 
         {/* Powered by IA MOTORSHUB */}
         <div className="text-center">
-          <p className="text-gray-400 text-sm mb-4">Powered by</p>
+          <p className="text-gray-400 text-sm mb-2">Powered by</p>
           <img
             src="/images/logo-footer.png"
             alt="IA MOTORSHUB"
-            className="w-auto mx-auto mb-6"
+            className="w-auto mx-auto mb-3"
             style={{ height: '480px', maxWidth: '100%', objectFit: 'contain' }}
             onError={(e) => {
               // Fallback si no existe el logo
@@ -120,7 +120,7 @@ export default function Footer() {
             </h3>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-6">
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-3">
             <span>🚀 Inteligencia Artificial</span>
             <span>•</span>
             <span>💡 Soluciones Tecnológicas</span>
@@ -128,7 +128,7 @@ export default function Footer() {
             <span>🎯 Automatización de Negocios</span>
           </div>
 
-          <p className="text-gray-500 text-xs">
+          <p className="text-gray-500 text-xs mb-0">
             © {new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
           </p>
         </div>
