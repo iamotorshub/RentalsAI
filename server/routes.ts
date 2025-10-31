@@ -95,7 +95,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                   <!-- Header con Logo -->
                   <tr>
                     <td style="background-color: #ffffff; padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                      <img src="${BASE_URL}/images/RENTALAS AI CIRCULAR SIN FONDO.png" alt="Rentals AI" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+                      <img src="${BASE_URL}/images/rentalsai-finalsinfondo.png" alt="Rentals AI" style="max-width: 200px; height: auto; margin-bottom: 20px;">
                       <h1 style="color: #1f2937; margin: 0; font-size: 28px; font-weight: bold;">¡Gracias por contactarnos!</h1>
                     </td>
                   </tr>
@@ -143,7 +143,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                     <td style="background-color: #1c5462; padding: 30px; text-align: center; border-radius: 0 0 8px 8px;">
                       <p style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">Equipo Rentals AI</p>
                       <p style="color: #d1d5db; margin: 0 0 15px 0; font-size: 14px;">Powered by</p>
-                      <img src="${BASE_URL}/images/logo-footer.png" alt="IA MOTORSHUB" style="max-width: 150px; height: auto; margin-bottom: 15px;">
+                      <img src="${BASE_URL}/images/logo-footer.png" alt="IA MOTORSHUB" style="max-width: 200px; height: auto; margin-bottom: 15px;">
                       <p style="color: #9ca3af; margin: 10px 0 5px 0; font-size: 13px;">
                         📍 Bahía Blanca, Buenos Aires, Argentina<br>
                         📧 contacto@iamotorshub.com<br>

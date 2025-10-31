@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Logo Rentals AI */}
           <div className="text-center md:text-left">
             <img
-              src="/images/RENTALAS AI CIRCULAR SIN FONDO - TODO BLANCO.png"
+              src="/images/rentalsai-finalsinfondo.png"
               alt="Rentals AI"
               className="h-32 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
               onError={(e) => {
