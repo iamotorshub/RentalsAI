@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Página principal - Alquiler temporada Monte Hermoso -->
+  <url>
+    <loc>https://rentalsaicosta.com/</loc>
+    <lastmod>2025-10-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://rentalsaicosta.com/og-image.jpg</image:loc>
+      <image:title>RENTALS AI COSTA - Alquiler Temporada Monte Hermoso</image:title>
+      <image:caption>Alquiler temporada en Monte Hermoso y Bahía Blanca con IA</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Agregar más URLs cuando se creen páginas adicionales -->
+  <!--
+  <url>
+    <loc>https://rentalsaicosta.com/propiedades</loc>
+    <lastmod>2025-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://rentalsaicosta.com/sobre-nosotros</loc>
+    <lastmod>2025-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://rentalsaicosta.com/contacto</loc>
+    <lastmod>2025-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  -->
+
+</urlset>
