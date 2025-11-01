@@ -93,7 +93,8 @@ export default function GuaranteeSection() {
                   alt=""
                   className="w-full h-full object-cover object-center brightness-130 saturate-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
+                {/* Overlay más fuerte en mobile/tablet para mejor legibilidad */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30 md:from-black/35 md:via-black/25 md:to-black/30 max-md:from-black/75 max-md:via-black/65 max-md:to-black/70"></div>
               </div>
 
               <div className="text-center relative z-10">
@@ -128,7 +129,8 @@ export default function GuaranteeSection() {
               alt=""
               className="w-full h-full object-cover object-center brightness-130 saturate-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/25"></div>
+            {/* Overlay más fuerte en mobile/tablet para mejor legibilidad */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/25 md:from-black/30 md:via-black/20 md:to-black/25 max-md:from-black/70 max-md:via-black/60 max-md:to-black/65"></div>
           </div>
           
           <div className="relative z-10">
