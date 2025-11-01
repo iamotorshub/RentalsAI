@@ -120,17 +120,17 @@ export default function TestimonialsSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4 sm:mb-6">
             Resultados <span className="text-success">Comprobados</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             Propietarios reales que transformaron sus propiedades con nuestra IA
           </p>
         </div>
 
         {/* Video Testimonials */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
           {/* Testimonial Selector */}
           <div className="space-y-4">
             {testimonials.map((testimonial, index) => (
@@ -281,12 +281,12 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Case Studies */}
-        <div className="mb-16">
-          <h3 className="text-2xl md:text-3xl font-display font-bold text-center mb-12">
+        <div className="mb-12 sm:mb-16 px-4">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-center mb-8 sm:mb-12">
             Casos de Éxito con <span className="text-golden">Números Reales</span>
           </h3>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {caseStudies.map((study, index) => (
               <Card key={index} className="p-6 hover-elevate" data-testid={`card-case-study-${index}`}>
                 <h4 className="font-bold text-lg mb-2">{study.title}</h4>
@@ -318,13 +318,13 @@ export default function TestimonialsSection() {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
-          <p className="text-lg text-muted-foreground mb-6">
+        <div className="text-center px-4">
+          <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6">
             Únete a más de 150 propietarios que ya transformaron sus ingresos
           </p>
           <Button
             size="lg"
-            className="bg-golden hover:bg-golden/90 text-golden-foreground"
+            className="bg-golden hover:bg-golden/90 text-golden-foreground text-sm sm:text-base px-6 sm:px-8"
             onClick={() => {
               const event = new CustomEvent('openContactForm', { detail: { source: 'Quiero Ser el Próximo Caso de Éxito' } });
               window.dispatchEvent(event);

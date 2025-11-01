@@ -6,14 +6,14 @@ export default function Footer() {
       {/* Decorative top border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-golden to-accent"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-4 sm:mb-6">
           {/* Logo Rentals AI */}
           <div className="text-center md:text-left">
             <img
               src="/images/rentalsai-finalsinfondo.png"
               alt="Rentals AI"
-              className="h-32 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
+              className="h-24 sm:h-32 mx-auto md:mx-0 mb-3 sm:mb-4 filter drop-shadow-lg"
               onError={(e) => {
                 // Fallback si no existe el logo
                 e.currentTarget.style.display = 'none';
@@ -25,15 +25,15 @@ export default function Footer() {
                 Rentals AI
               </h3>
             </div>
-            <p className="text-gray-400 mt-4 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4 leading-relaxed px-4 md:px-0">
               Transformamos propiedades en máquinas de generar ingresos con IA de última generación.
             </p>
           </div>
 
           {/* Información de Contacto */}
           <div className="text-center md:text-left">
-            <h4 className="text-xl font-bold mb-4 text-golden">Contacto</h4>
-            <div className="space-y-3 text-gray-300">
+            <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-golden">Contacto</h4>
+            <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-300">
               <a
                 href="tel:+5492915206692"
                 className="flex items-center gap-3 hover:text-golden transition-colors group justify-center md:justify-start"
@@ -65,8 +65,8 @@ export default function Footer() {
 
           {/* Enlaces Rápidos */}
           <div className="text-center md:text-left">
-            <h4 className="text-xl font-bold mb-4 text-golden">Empresa</h4>
-            <div className="space-y-3">
+            <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-golden">Empresa</h4>
+            <div className="space-y-2 sm:space-y-3 text-sm sm:text-base">
               <a
                 href="https://wa.me/5492915206692"
                 target="_blank"
@@ -101,12 +101,12 @@ export default function Footer() {
         <div className="border-t border-gray-700 my-2"></div>
 
         {/* Powered by IA MOTORSHUB */}
-        <div className="text-center">
-          <p className="text-gray-400 text-sm mb-1">Powered by</p>
+        <div className="text-center px-4">
+          <p className="text-gray-400 text-xs sm:text-sm mb-1 sm:mb-2">Powered by</p>
           <img
             src="/images/logo-footer.png"
             alt="IA MOTORSHUB"
-            className="h-80 w-auto mx-auto mb-2"
+            className="h-48 sm:h-64 md:h-80 w-auto mx-auto mb-2 sm:mb-3"
             style={{ maxWidth: '100%', objectFit: 'contain' }}
             onError={(e) => {
               // Fallback si no existe el logo
@@ -120,15 +120,15 @@ export default function Footer() {
             </h3>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-1">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-gray-400 mb-2 sm:mb-3">
             <span>🚀 Inteligencia Artificial</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>💡 Soluciones Tecnológicas</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>🎯 Automatización de Negocios</span>
           </div>
 
-          <p className="text-gray-500 text-xs">
+          <p className="text-gray-500 text-[10px] sm:text-xs">
             © {new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
           </p>
         </div>
