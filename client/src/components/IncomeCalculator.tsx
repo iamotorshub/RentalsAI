@@ -78,21 +78,21 @@ export default function IncomeCalculator() {
     <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-100 via-slate-50 to-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4 sm:mb-6">
             Calculadora de <span className="text-golden">Ingresos Potenciales</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             Descubre cuánto dinero podrías ganar con nuestra IA en tu propiedad.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Calculator Inputs */}
-          <Card className="p-8">
-            <div className="flex items-center gap-3 mb-8">
-              <Calculator className="w-6 h-6 text-accent" />
-              <h3 className="text-2xl font-bold">Datos de Tu Propiedad</h3>
+          <Card className="p-4 sm:p-6 md:p-8">
+            <div className="flex items-center gap-3 mb-6 sm:mb-8">
+              <Calculator className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
+              <h3 className="text-xl sm:text-2xl font-bold">Datos de Tu Propiedad</h3>
             </div>
 
             <div className="space-y-8">
@@ -306,8 +306,8 @@ export default function IncomeCalculator() {
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
+        <div className="mt-8 sm:mt-12 text-center px-4">
+          <p className="text-xs sm:text-sm text-muted-foreground max-w-3xl mx-auto">
             * Los resultados son estimaciones y pueden variar según la ubicación específica, tipo de propiedad, demanda del mercado y la correcta aplicación de las estrategias. Los cálculos se basan en el promedio de mejoras observadas en propiedades gestionadas por Rentals AI durante los primeros meses de implementación.
           </p>
         </div>

@@ -70,30 +70,30 @@ export default function ProblemSolutionSplit() {
     <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4 sm:mb-6">
             <span className="text-blue-600">EL PROBLEMA</span> vs{" "}
             <span className="text-orange-600">LA SOLUCIÓN</span>
           </h2>
-          
+
           {/* Real-time Counter */}
-          <Card className="inline-block p-6 bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 shadow-lg">
-            <p className="text-sm text-gray-600 mb-2">Reservas perdidas en tiempo real</p>
-            <p className="text-4xl font-bold text-blue-600" data-testid="text-lost-bookings">
+          <Card className="inline-block p-4 sm:p-6 bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 shadow-lg max-w-sm mx-auto">
+            <p className="text-xs sm:text-sm text-gray-600 mb-2">Reservas perdidas en tiempo real</p>
+            <p className="text-3xl sm:text-4xl font-bold text-blue-600" data-testid="text-lost-bookings">
               {lostBookings.toLocaleString()}
             </p>
-            <p className="text-sm text-blue-500">Solo en Monte Hermoso este año</p>
+            <p className="text-xs sm:text-sm text-blue-500">Solo en Monte Hermoso este año</p>
           </Card>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Problem Column */}
-          <div className="space-y-6">
-            <div className="text-center lg:text-left mb-8">
-              <h3 className="text-2xl md:text-3xl font-display font-bold text-blue-600 mb-4">
+          <div className="space-y-4 sm:space-y-6 px-4">
+            <div className="text-center lg:text-left mb-6 sm:mb-8">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-blue-600 mb-3 sm:mb-4">
                 LO QUE PASA HOY
               </h3>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-base sm:text-lg text-muted-foreground">
                 Propietarios perdiendo oportunidades todos los días
               </p>
             </div>
@@ -124,12 +124,12 @@ export default function ProblemSolutionSplit() {
           </div>
 
           {/* Solution Column */}
-          <div className="space-y-6">
-            <div className="text-center lg:text-left mb-8">
-              <h3 className="text-2xl md:text-3xl font-display font-bold text-orange-600 mb-4">
+          <div className="space-y-4 sm:space-y-6 px-4">
+            <div className="text-center lg:text-left mb-6 sm:mb-8">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-orange-600 mb-3 sm:mb-4">
                 CON RENTALS AI
               </h3>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-base sm:text-lg text-muted-foreground">
                 Automatización inteligente que nunca duerme
               </p>
             </div>

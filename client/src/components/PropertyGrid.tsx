@@ -127,18 +127,18 @@ export default function PropertyGrid() {
     <section className="py-16 lg:py-24 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4 sm:mb-6">
             Propiedades con <span className="text-accent">IA Integrada</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             Cada propiedad potenciada con inteligencia artificial para maximizar
             ocupación y rentabilidad
           </p>
         </div>
 
         {/* Properties Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {properties.map((property, index) => (
             <Card
               key={property.id}
@@ -291,7 +291,7 @@ export default function PropertyGrid() {
         </div>
 
         {/* Summary Stats */}
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8 px-4">
           <Card className="p-6 text-center bg-success/5 border-success/20">
             <p className="text-3xl font-bold text-success mb-2">
               {Math.round(
@@ -324,10 +324,10 @@ export default function PropertyGrid() {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
+        <div className="text-center px-4">
           <Button
             size="lg"
-            className="bg-accent hover:bg-accent/90 text-accent-foreground"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm sm:text-base px-6 sm:px-8"
             onClick={() => {
               const event = new CustomEvent('openContactForm', { detail: { source: 'Agregar Mi Propiedad al Sistema' } });
               window.dispatchEvent(event);
