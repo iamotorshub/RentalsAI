@@ -13,7 +13,7 @@ export default function Footer() {
             <img
               src="/images/rentalsai-finalsinfondo.png"
               alt="Rentals AI"
-              className="h-44 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
+              className="h-32 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
               onError={(e) => {
                 // Fallback si no existe el logo
                 e.currentTarget.style.display = 'none';
@@ -106,8 +106,8 @@ export default function Footer() {
           <img
             src="/images/logo-footer.png"
             alt="IA MOTORSHUB"
-            className="w-auto mx-auto mb-3"
-            style={{ height: '480px', maxWidth: '100%', objectFit: 'contain' }}
+            className="h-40 w-auto mx-auto mb-4"
+            style={{ maxWidth: '100%', objectFit: 'contain' }}
             onError={(e) => {
               // Fallback si no existe el logo
               e.currentTarget.style.display = 'none';
@@ -128,7 +128,7 @@ export default function Footer() {
             <span>🎯 Automatización de Negocios</span>
           </div>
 
-          <p className="text-gray-500 text-xs mb-0">
+          <p className="text-gray-500 text-xs">
             © {new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
           </p>
         </div>
