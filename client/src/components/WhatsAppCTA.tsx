@@ -28,11 +28,11 @@ export default function WhatsAppCTA() {
 
   return (
     <>
-      {/* Floating WhatsApp Button */}
-      <div className="fixed top-6 right-6 z-50">
-        {/* Chat Preview */}
+      {/* Floating WhatsApp Button - Reposicionado para mobile/tablet */}
+      <div className="fixed top-6 right-6 md:top-6 md:right-6 max-md:bottom-20 max-md:top-auto z-50">
+        {/* Chat Preview - Ajustado para aparecer arriba del botón en mobile */}
         {isOpen && (
-          <Card className="mb-4 w-80 p-0 shadow-2xl border-success/20 bg-background">
+          <Card className="mb-4 md:mb-4 max-md:mb-0 max-md:-mt-[420px] w-80 max-w-[calc(100vw-3rem)] p-0 shadow-2xl border-success/20 bg-background">
             <div className="p-4 bg-success text-success-foreground rounded-t-lg">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
