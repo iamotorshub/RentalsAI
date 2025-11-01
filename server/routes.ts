@@ -9,7 +9,7 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const EMAIL_TO = "contacto@iamotorshub.com";
 
 // URL base para imágenes en emails - Render genera automáticamente RENDER_EXTERNAL_URL
-const BASE_URL = process.env.RENDER_EXTERNAL_URL || process.env.APP_URL || 'https://your-app.onrender.com';
+const BASE_URL = process.env.RENDER_EXTERNAL_URL || process.env.APP_URL || 'https://rentalsaicosta.com';
 
 // Función de registro de rutas
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -95,7 +95,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                   <!-- Header con Logo -->
                   <tr>
                     <td style="background-color: #ffffff; padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                      <img src="${BASE_URL}/images/rentalsai-finalsinfondo.png" alt="Rentals AI" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+                      <img src="${BASE_URL}/images/rentalsai-finalsinfondo.png" alt="Rentals AI" style="max-width: 200px; height: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;">
                       <h1 style="color: #1f2937; margin: 0; font-size: 28px; font-weight: bold;">¡Gracias por contactarnos!</h1>
                     </td>
                   </tr>
@@ -140,10 +140,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
                   <!-- Footer -->
                   <tr>
-                    <td style="background-color: #1c5462; padding: 30px; text-align: center; border-radius: 0 0 8px 8px;">
+                    <td style="background-color: #111827; padding: 30px; text-align: center; border-radius: 0 0 8px 8px;">
                       <p style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">Equipo Rentals AI</p>
-                      <p style="color: #d1d5db; margin: 0 0 15px 0; font-size: 14px;">Powered by</p>
-                      <img src="${BASE_URL}/images/logo-footer.png" alt="IA MOTORSHUB" style="max-width: 200px; height: auto; margin-bottom: 15px;">
+                      <p style="color: #d1d5db; margin: 0 0 10px 0; font-size: 14px;">Powered by</p>
+                      <img src="${BASE_URL}/images/logo-footer.png" alt="IA MOTORSHUB" style="max-width: 180px; height: auto; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
                       <p style="color: #9ca3af; margin: 10px 0 5px 0; font-size: 13px;">
                         📍 Bahía Blanca, Buenos Aires, Argentina<br>
                         📧 contacto@iamotorshub.com<br>
