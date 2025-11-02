@@ -92,10 +92,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
             <tr>
               <td align="center">
                 <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                  <!-- Header con Logo -->
+                  <!-- Header con Logo Rentals AI - Fondo claro -->
                   <tr>
-                    <td style="background-color: #ffffff; padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                      <img src="https://rentalsaicosta.com/images/rentalsai-finalsinfondo.png" alt="Rentals AI" width="200" height="200" style="max-width: 200px; height: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; border: 0;">
+                    <td style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                      <img src="https://rentalsaicosta.com/images/rentalsai-finalsinfondo.png" alt="Rentals AI" width="220" height="220" style="max-width: 220px; height: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; border: 0;">
                       <h1 style="color: #1f2937; margin: 0; font-size: 28px; font-weight: bold;">¡Gracias por contactarnos!</h1>
                     </td>
                   </tr>
@@ -138,18 +138,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
                     </td>
                   </tr>
 
-                  <!-- Footer -->
+                  <!-- Footer con Logo IA MOTORSHUB - Fondo oscuro -->
                   <tr>
-                    <td style="background-color: #111827; padding: 30px; text-align: center; border-radius: 0 0 8px 8px;">
-                      <p style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">Equipo Rentals AI</p>
-                      <p style="color: #d1d5db; margin: 0 0 10px 0; font-size: 14px;">Powered by</p>
-                      <img src="https://rentalsaicosta.com/images/logo-footer.png" alt="IA MOTORSHUB" width="180" height="60" style="max-width: 180px; height: auto; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; border: 0;">
-                      <p style="color: #9ca3af; margin: 10px 0 5px 0; font-size: 13px;">
+                    <td style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); padding: 40px 30px; text-align: center; border-radius: 0 0 8px 8px;">
+                      <p style="color: #ffffff; margin: 0 0 15px 0; font-size: 16px; font-weight: bold;">Equipo Rentals AI</p>
+                      <p style="color: #d1d5db; margin: 0 0 15px 0; font-size: 14px;">Powered by</p>
+                      <img src="https://rentalsaicosta.com/images/logo-footer.png" alt="IA MOTORSHUB" width="240" height="80" style="max-width: 240px; height: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; border: 0;">
+                      <p style="color: #9ca3af; margin: 15px 0 5px 0; font-size: 13px; line-height: 1.6;">
                         📍 Bahía Blanca, Buenos Aires, Argentina<br>
                         📧 contacto@iamotorshub.com<br>
                         📱 WhatsApp: +54 9 291 520-6692
                       </p>
-                      <p style="color: #6b7280; margin: 15px 0 0 0; font-size: 11px;">
+                      <p style="color: #6b7280; margin: 20px 0 0 0; font-size: 11px;">
                         © ${new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
                       </p>
                     </td>
