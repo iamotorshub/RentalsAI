@@ -84,23 +84,23 @@ export default function AITechnologyShowcase() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Encabezado */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 px-4">
           <Badge
             variant="outline"
-            className="mb-6 px-6 py-2 text-sm border-golden text-golden bg-black/40 backdrop-blur-md shadow-lg"
+            className="mb-4 sm:mb-6 px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm border-golden text-golden bg-black/40 backdrop-blur-md shadow-lg"
           >
             POWERED BY IA MOTORS HUB - BAHÍA BLANCA
           </Badge>
-          <h2 className="text-4xl md:text-6xl font-display font-extrabold mb-6 text-white drop-shadow-[0_8px_24px_rgba(0,0,0,1)] [text-shadow:_2px_2px_8px_rgb(0_0_0_/_80%)]">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-display font-extrabold mb-4 sm:mb-6 text-white drop-shadow-[0_8px_24px_rgba(0,0,0,1)] [text-shadow:_2px_2px_8px_rgb(0_0_0_/_80%)]">
             Tecnología de <span className="text-accent drop-shadow-[0_0_20px_rgba(99,102,241,0.8)]">Vanguardia</span>
           </h2>
-          <p className="text-lg text-white/90 max-w-3xl mx-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] font-medium">
+          <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-3xl mx-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] font-medium">
             4 pilares tecnológicos que revolucionan la gestión de alquileres temporarios
           </p>
         </div>
 
         {/* Pilares */}
-        <div className="grid md:grid-cols-4 gap-4 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-12 sm:mb-16 px-4">
           {pillars.map((pillar, index) => (
             <motion.div
               key={index}
@@ -108,7 +108,7 @@ export default function AITechnologyShowcase() {
               transition={{ type: "spring", stiffness: 200 }}
             >
               <Card
-                className={`p-6 cursor-pointer transition-all duration-300 backdrop-blur-md ${
+                className={`p-4 sm:p-6 cursor-pointer transition-all duration-300 backdrop-blur-md ${
                   selectedPillar === index
                     ? "border-accent bg-accent/20 shadow-2xl ring-2 ring-accent/60"
                     : "border-white/20 bg-black/40 hover:border-accent/50 hover:bg-black/50"
@@ -117,18 +117,18 @@ export default function AITechnologyShowcase() {
               >
                 <div className="text-center">
                   <div
-                    className={`inline-flex p-4 rounded-xl mb-4 shadow-xl transition-all ${
+                    className={`inline-flex p-3 sm:p-4 rounded-xl mb-3 sm:mb-4 shadow-xl transition-all ${
                       selectedPillar === index
                         ? "bg-accent text-white shadow-accent/50"
                         : "bg-white/30 text-white shadow-black/50"
                     }`}
                   >
-                    <pillar.icon className="w-8 h-8" />
+                    <pillar.icon className="w-6 h-6 sm:w-8 sm:h-8" />
                   </div>
-                  <h3 className="font-bold text-sm text-white mb-1 tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                  <h3 className="font-bold text-xs sm:text-sm text-white mb-1 tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                     {pillar.title}
                   </h3>
-                  <p className="text-xs text-white/80 font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">{pillar.subtitle}</p>
+                  <p className="text-[10px] sm:text-xs text-white/80 font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">{pillar.subtitle}</p>
                 </div>
               </Card>
             </motion.div>
@@ -144,8 +144,8 @@ export default function AITechnologyShowcase() {
             exit={{ opacity: 0, y: -40 }}
             transition={{ duration: 0.7 }}
           >
-            <Card className="relative overflow-hidden p-10 lg:p-16 bg-black/50 backdrop-blur-xl border border-white/30 shadow-2xl">
-              <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <Card className="relative overflow-hidden p-6 sm:p-8 lg:p-16 bg-black/50 backdrop-blur-xl border border-white/30 shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
                 {/* Texto */}
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">

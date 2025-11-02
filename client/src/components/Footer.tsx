@@ -13,7 +13,7 @@ export default function Footer() {
             <img
               src="/images/rentalsai-finalsinfondo.png"
               alt="Rentals AI"
-              className="h-32 mx-auto md:mx-0 mb-4 filter drop-shadow-lg"
+              className="h-24 sm:h-32 mx-auto md:mx-0 mb-3 sm:mb-4 filter drop-shadow-lg"
               onError={(e) => {
                 // Fallback si no existe el logo
                 e.currentTarget.style.display = 'none';
@@ -25,15 +25,15 @@ export default function Footer() {
                 Rentals AI
               </h3>
             </div>
-            <p className="text-gray-400 mt-4 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4 leading-relaxed px-4 md:px-0">
               Transformamos propiedades en máquinas de generar ingresos con IA de última generación.
             </p>
           </div>
 
           {/* Información de Contacto */}
           <div className="text-center md:text-left">
-            <h4 className="text-xl font-bold mb-4 text-golden">Contacto</h4>
-            <div className="space-y-3 text-gray-300">
+            <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-golden">Contacto</h4>
+            <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-300">
               <a
                 href="tel:+5492915206692"
                 className="flex items-center gap-3 hover:text-golden transition-colors group justify-center md:justify-start"
@@ -65,8 +65,8 @@ export default function Footer() {
 
           {/* Enlaces Rápidos */}
           <div className="text-center md:text-left">
-            <h4 className="text-xl font-bold mb-4 text-golden">Empresa</h4>
-            <div className="space-y-3">
+            <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-golden">Empresa</h4>
+            <div className="space-y-2 sm:space-y-3 text-sm sm:text-base">
               <a
                 href="https://wa.me/5492915206692"
                 target="_blank"
@@ -122,9 +122,9 @@ export default function Footer() {
 
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-0 mt-1">
             <span>🚀 Inteligencia Artificial</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>💡 Soluciones Tecnológicas</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>🎯 Automatización de Negocios</span>
           </div>
 

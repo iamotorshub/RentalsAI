@@ -89,38 +89,38 @@ export default function InteractiveDemo() {
     <section className="py-16 lg:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4 sm:mb-6 px-4">
             Demo <span className="text-accent">Interactivo</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
             Ve en tiempo real cómo nuestra IA convierte consultas en reservas confirmadas
           </p>
-          
+
           {/* Live Stats */}
-          <div className="flex justify-center items-center gap-6 mb-8">
-            <Card className="p-4 bg-success/5 border-success/20">
-              <p className="text-sm text-muted-foreground">Consultas Atendidas Hoy</p>
-              <p className="text-2xl font-bold text-success" data-testid="text-consultas-atendidas">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-6 sm:mb-8 px-4">
+            <Card className="p-3 sm:p-4 bg-success/5 border-success/20 w-full sm:w-auto">
+              <p className="text-xs sm:text-sm text-muted-foreground">Consultas Atendidas Hoy</p>
+              <p className="text-xl sm:text-2xl font-bold text-success" data-testid="text-consultas-atendidas">
                 {consultasAtendidas}
               </p>
             </Card>
-            <Card className="p-4 bg-golden/5 border-golden/20">
-              <p className="text-sm text-muted-foreground">Tiempo Promedio</p>
-              <p className="text-2xl font-bold text-golden">18s</p>
+            <Card className="p-3 sm:p-4 bg-golden/5 border-golden/20 w-full sm:w-auto">
+              <p className="text-xs sm:text-sm text-muted-foreground">Tiempo Promedio</p>
+              <p className="text-xl sm:text-2xl font-bold text-golden">18s</p>
             </Card>
-            <Card className="p-4 bg-accent/5 border-accent/20">
-              <p className="text-sm text-muted-foreground">Tasa de Conversión</p>
-              <p className="text-2xl font-bold text-accent">94%</p>
+            <Card className="p-3 sm:p-4 bg-accent/5 border-accent/20 w-full sm:w-auto">
+              <p className="text-xs sm:text-sm text-muted-foreground">Tasa de Conversión</p>
+              <p className="text-xl sm:text-2xl font-bold text-accent">94%</p>
             </Card>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Chat Simulator */}
           <div>
-            <Card className="h-[600px] flex flex-col">
-              <div className="p-4 border-b bg-accent/5">
+            <Card className="h-[500px] sm:h-[600px] flex flex-col">
+              <div className="p-3 sm:p-4 border-b bg-accent/5">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
                     <Bot className="w-4 h-4 text-accent-foreground" />
