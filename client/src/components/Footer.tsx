@@ -100,13 +100,13 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-gray-700 my-1"></div>
 
-        {/* Powered by IA MOTORSHUB - Logo más grande */}
+        {/* Powered by IA MOTORSHUB - Logo optimizado sin aire */}
         <div className="text-center">
           <p className="text-gray-400 text-sm mb-0">Powered by</p>
           <img
             src="/images/logo-footer.png"
             alt="IA MOTORSHUB"
-            className="h-[400px] w-auto mx-auto mb-0"
+            className="h-[400px] w-auto mx-auto -my-16"
             style={{ maxWidth: '100%', objectFit: 'contain' }}
             onError={(e) => {
               // Fallback si no existe el logo
@@ -120,7 +120,7 @@ export default function Footer() {
             </h3>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-0 mt-1">
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-0 mt-0">
             <span>🚀 Inteligencia Artificial</span>
             <span className="hidden sm:inline">•</span>
             <span>💡 Soluciones Tecnológicas</span>
