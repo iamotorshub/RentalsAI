@@ -100,13 +100,13 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-gray-700 my-1"></div>
 
-        {/* Powered by IA MOTORSHUB - Logo agrandado al doble+ */}
+        {/* Powered by IA MOTORSHUB - Logo más grande */}
         <div className="text-center">
           <p className="text-gray-400 text-sm mb-0">Powered by</p>
           <img
             src="/images/logo-footer.png"
             alt="IA MOTORSHUB"
-            className="h-[280px] w-auto mx-auto mb-0"
+            className="h-[400px] w-auto mx-auto mb-0"
             style={{ maxWidth: '100%', objectFit: 'contain' }}
             onError={(e) => {
               // Fallback si no existe el logo
