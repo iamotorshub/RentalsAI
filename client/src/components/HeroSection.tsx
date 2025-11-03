@@ -82,7 +82,7 @@ export default function HeroSection() {
       </button>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto pl-4 pr-8 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto pl-2 pr-10 sm:px-6 lg:px-8 max-md:text-left sm:text-center">
         {/* Urgency Timer */}
         <div className="inline-flex items-center gap-2 bg-destructive/90 backdrop-blur-sm text-destructive-foreground px-4 py-2 rounded-full mb-6 animate-pulse max-w-full">
           <Timer className="w-4 h-4 flex-shrink-0" />
@@ -92,19 +92,19 @@ export default function HeroSection() {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-[0_6px_12px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] pl-0 pr-2 sm:px-2">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-[0_6px_12px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] pr-4 sm:px-2">
           GESTIÓN INTELIGENTE
           <br />
           <span className="text-golden drop-shadow-[0_6px_12px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">PARA TUS ALQUILERES</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-white font-bold mb-3 sm:mb-4 max-w-4xl mx-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] pl-0 pr-2 sm:px-2">
+        <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-white font-bold mb-3 sm:mb-4 max-w-4xl mx-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] pr-4 sm:px-2">
           Integración directa con <span className="font-bold text-golden drop-shadow-[0_4px_8px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">Airbnb, Booking y más</span> + Soporte completo para maximizar tu ocupación
         </p>
 
         {/* Key Benefits */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 max-w-2xl mx-auto">
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 max-w-2xl max-md:mr-4 sm:mx-auto">
           <p className="text-xs sm:text-base md:text-lg text-white/80 mb-2">
             Sincronización automática + IA 24/7
           </p>
@@ -114,7 +114,7 @@ export default function HeroSection() {
         </div>
 
         {/* Split Preview Before/After */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 max-w-4xl max-md:mr-4 sm:mx-auto">
           <div className="bg-destructive/20 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-destructive/30">
             <h3 className="text-base sm:text-xl font-bold text-white mb-3 sm:mb-4">GESTIÓN MANUAL</h3>
             <div className="space-y-2 text-xs sm:text-base text-white/80">
@@ -134,7 +134,7 @@ export default function HeroSection() {
         </div>
 
         {/* Carousel Dots */}
-        <div className="flex justify-center gap-2 mt-12 mb-8">
+        <div className="flex max-md:justify-start sm:justify-center gap-2 mt-12 mb-8">
           {heroImages.map((_, index) => (
             <button
               key={index}
@@ -148,10 +148,10 @@ export default function HeroSection() {
         </div>
 
         {/* Main CTA Button */}
-        <div className="px-2">
+        <div className="max-md:pr-4">
           <Button
             size="lg"
-            className="relative bg-gradient-to-r from-accent via-accent to-golden text-white font-bold text-sm sm:text-lg px-6 sm:px-12 py-4 sm:py-7 rounded-full shadow-2xl overflow-hidden group hover:scale-105 transition-transform border-2 border-white/30 w-full max-w-md mx-auto"
+            className="relative bg-gradient-to-r from-accent via-accent to-golden text-white font-bold text-sm sm:text-lg px-6 sm:px-12 py-4 sm:py-7 rounded-full shadow-2xl overflow-hidden group hover:scale-105 transition-transform border-2 border-white/30 w-full max-w-md max-md:max-w-none sm:mx-auto"
             onClick={() => {
               const event = new CustomEvent('openContactForm', { detail: { source: 'Ver Demo en Vivo - Hero' } });
               window.dispatchEvent(event);
