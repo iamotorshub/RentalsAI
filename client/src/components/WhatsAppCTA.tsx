@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MessageCircle, X, Bot, User } from "lucide-react";
 
 export default function WhatsAppCTA() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isInHero, setIsInHero] = useState(true);
   const [messages] = useState([
     {
       type: "ai",
@@ -12,11 +13,24 @@ export default function WhatsAppCTA() {
       timestamp: "Ahora"
     },
     {
-      type: "ai", 
+      type: "ai",
       message: "¿Te interesa saber cómo podemos triplicar las reservas de tu propiedad?",
       timestamp: "Ahora"
     }
   ]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Considera que estamos en Hero si el scroll es menor al 80% de la altura de la ventana
+      const heroHeight = window.innerHeight * 0.8;
+      setIsInHero(window.scrollY < heroHeight);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
@@ -87,11 +101,13 @@ export default function WhatsAppCTA() {
           </Card>
         )}
 
-        {/* Main Floating Button */}
+        {/* Main Floating Button - Transparente en Hero */}
         <Button
           onClick={() => setIsOpen(!isOpen)}
           size="lg"
-          className="w-16 h-16 rounded-full bg-success hover:bg-success/90 text-success-foreground shadow-2xl"
+          className={`w-16 h-16 rounded-full bg-success hover:bg-success/90 text-success-foreground shadow-2xl transition-opacity duration-300 ${
+            isInHero ? 'opacity-30 hover:opacity-50' : 'opacity-100'
+          }`}
           data-testid="button-whatsapp-float"
         >
           <MessageCircle className="w-6 h-6" />
