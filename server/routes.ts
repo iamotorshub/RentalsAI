@@ -9,7 +9,7 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const EMAIL_TO = "contacto@iamotorshub.com";
 
 // URL base para imágenes en emails - Render genera automáticamente RENDER_EXTERNAL_URL
-const BASE_URL = process.env.RENDER_EXTERNAL_URL || process.env.APP_URL || 'https://rentalsaicosta.com';
+const BASE_URL = process.env.RENDER_EXTERNAL_URL || process.env.APP_URL || 'https://rentalsai.iamotorshub.com';
 
 // Función de registro de rutas
 export async function registerRoutes(app: Express): Promise<Server> {
