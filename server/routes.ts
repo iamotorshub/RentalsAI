@@ -175,18 +175,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
                     </td>
                   </tr>
 
-                  <!-- Footer con Logo IA MOTORSHUB - Ultra compacto sin negative margins -->
+                  <!-- Footer con Logo IA MOTORSHUB - EXTREMADAMENTE COMPACTO -->
                   <tr>
-                    <td style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); padding: 8px 20px 8px 20px; text-align: center; border-radius: 0 0 8px 8px;">
-                      <p style="color: #ffffff; margin: 0; padding: 0; font-size: 14px; font-weight: bold; line-height: 1;">Equipo Rentals AI</p>
-                      <p style="color: #d1d5db; margin: 0; padding: 2px 0 0 0; font-size: 11px; line-height: 1;">Powered by</p>
-                      <img src="https://i.ibb.co/S79mNmfV/IAMOTORSHUB-LOGO-BLANCO.png" alt="IA MOTORSHUB" width="320" height="107" style="max-width: 320px; height: auto; margin: 0; padding: 0; display: block; margin-left: auto; margin-right: auto; border: 0;">
-                      <p style="color: #9ca3af; margin: 0; padding: 2px 0 0 0; font-size: 10px; line-height: 1.4;">
+                    <td style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); padding: 4px 20px 4px 20px; text-align: center; border-radius: 0 0 8px 8px;">
+                      <p style="color: #ffffff; margin: 0; padding: 0; font-size: 14px; font-weight: bold; line-height: 0.9;">Equipo Rentals AI</p>
+                      <p style="color: #d1d5db; margin: 0; padding: 0; font-size: 11px; line-height: 0.8;">Powered by</p>
+                      <img src="https://i.ibb.co/S79mNmfV/IAMOTORSHUB-LOGO-BLANCO.png" alt="IA MOTORSHUB" width="360" height="120" style="max-width: 360px; height: auto; margin: 0; padding: 0; display: block; margin-left: auto; margin-right: auto; border: 0; vertical-align: bottom;">
+                      <p style="color: #9ca3af; margin: 0; padding: 0; font-size: 10px; line-height: 1.3;">
                         📍 Bahía Blanca, Buenos Aires<br>
                         📧 contacto@iamotorshub.com<br>
                         📱 +54 9 291 520-6692
                       </p>
-                      <p style="color: #6b7280; margin: 0; padding: 2px 0 0 0; font-size: 9px; line-height: 1;">
+                      <p style="color: #6b7280; margin: 0; padding: 1px 0 0 0; font-size: 9px; line-height: 0.9;">
                         © ${new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
                       </p>
                     </td>
