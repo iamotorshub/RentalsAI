@@ -180,7 +180,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                     <td style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); padding: 4px 20px 4px 20px; text-align: center; border-radius: 0 0 8px 8px;">
                       <p style="color: #ffffff; margin: 0; padding: 0; font-size: 14px; font-weight: bold; line-height: 0.9;">Equipo Rentals AI</p>
                       <p style="color: #d1d5db; margin: 0; padding: 0 0 10px 0; font-size: 11px; line-height: 0.8;">Powered by</p>
-                      <img src="https://rentalsai.iamotorshub.com/images/logo-motorshub-email.png" alt="IA MOTORSHUB" width="280" height="107" style="max-width: 280px; height: auto; margin: 0; padding: 0; display: block; margin-left: auto; margin-right: auto; border: 0; vertical-align: bottom;">
+                      <img src="https://rentalsai.iamotorshub.com/images/logo-motorshub-email.png" alt="IA MOTORSHUB" width="224" height="85" style="max-width: 224px; height: auto; margin: 0; padding: 0; display: block; margin-left: auto; margin-right: auto; border: 0; vertical-align: bottom;">
                       <p style="color: #9ca3af; margin: 0; padding: 10px 0 0 0; font-size: 10px; line-height: 1.3;">
                         📍 Bahía Blanca, Buenos Aires<br>
                         📧 contacto@iamotorshub.com<br>
