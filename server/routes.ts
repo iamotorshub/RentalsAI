@@ -39,6 +39,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
+      // Generar link de Google Calendar si es videollamada (antes de los templates)
+      let googleCalendarLink = '';
+      if (fecha && hora) {
+        const [day, month, year] = fecha.split('/');
+        const [hours, minutes] = hora.split(':');
+        const eventDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day), parseInt(hours), parseInt(minutes));
+        const endDate = new Date(eventDate.getTime() + 60 * 60 * 1000); // +1 hora
+
+        const formatDateForGoogle = (date: Date) => {
+          return date.toISOString().replace(/-|:|\.\d{3}/g, '');
+        };
+
+        const startTime = formatDateForGoogle(eventDate);
+        const endTime = formatDateForGoogle(endDate);
+        const eventTitle = encodeURIComponent('Videollamada con Rentals AI');
+        const eventDetails = encodeURIComponent(`Reunión con ${nombre}\\nWhatsApp: ${whatsapp}\\nEmail: ${email}`);
+
+        googleCalendarLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${eventTitle}&dates=${startTime}/${endTime}&details=${eventDetails}&location=Online`;
+      }
+
       // Cuerpo del mail interno
       const emailBody = `
         <h2>Nueva Solicitud de Contacto - Rentals AI</h2>
@@ -55,6 +75,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             ? `<p><strong>Fecha y hora solicitada:</strong> ${fecha} a las ${hora}</p>`
             : ""
         }
+        ${googleCalendarLink ? `<p style="margin-top: 20px;"><a href="${googleCalendarLink}" style="display: inline-block; background-color: #6366f1; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">📅 Agregar a Google Calendar</a></p>` : ''}
       `;
 
       // Enviar correo al equipo (desde tu cuenta de contacto)
@@ -79,6 +100,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         throw new Error("Error al enviar el email al equipo");
       }
 
+      // Mensaje de confirmación personalizado según el tipo
+      const confirmationMessage = fecha && hora
+        ? '¡Tu demo fue confirmada! Nos vemos pronto.'
+        : '¡Tu mensaje fue confirmado! Nos contactaremos a la brevedad.';
+
       // Cuerpo del mail de confirmación al cliente (diseño profesional con logo)
       const clientEmailBody = `
         <!DOCTYPE html>
@@ -92,65 +118,70 @@ export async function registerRoutes(app: Express): Promise<Server> {
             <tr>
               <td align="center">
                 <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                  <!-- Header con Logo Rentals AI - Ultra compacto -->
+                  <!-- Header con Logo Rentals AI - Super compacto -->
                   <tr>
-                    <td style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 15px 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                      <img src="https://i.ibb.co/9mCB4S3R/rentalsai-finalsinfondo.png" alt="Rentals AI" width="160" height="160" style="max-width: 160px; height: auto; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; border: 0;">
-                      <h1 style="color: #1f2937; margin: 0 0 3px 0; font-size: 24px; font-weight: bold;">¡Gracias por contactarnos!</h1>
-                      <p style="color: #6366f1; margin: 0; font-size: 13px; font-weight: 600;">Transformamos propiedades en máquinas de generar ingresos</p>
+                    <td style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 10px 20px; text-align: center; border-radius: 8px 8px 0 0;">
+                      <img src="https://i.ibb.co/9mCB4S3R/rentalsai-finalsinfondo.png" alt="Rentals AI" width="140" height="140" style="max-width: 140px; height: auto; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; border: 0;">
+                      <h1 style="color: #1f2937; margin: 0 0 5px 0; font-size: 22px; font-weight: bold;">${confirmationMessage}</h1>
+                      <p style="color: #6366f1; margin: 0; font-size: 12px; font-weight: 600;">Rentals AI - Automatización Inteligente</p>
                     </td>
                   </tr>
 
                   <!-- Contenido -->
                   <tr>
-                    <td style="padding: 40px 30px;">
-                      <p style="font-size: 16px; color: #1f2937; line-height: 1.6; margin-bottom: 20px;">
+                    <td style="padding: 20px;">
+                      <p style="font-size: 15px; color: #1f2937; line-height: 1.5; margin-bottom: 15px;">
                         Hola <strong>${nombre}</strong>,
                       </p>
-                      <p style="font-size: 16px; color: #1f2937; line-height: 1.6; margin-bottom: 30px;">
-                        Hemos recibido tu solicitud de <strong style="color: #6366f1;">${tipo}</strong> y estamos muy contentos de poder ayudarte a optimizar tu propiedad.
+                      <p style="font-size: 15px; color: #1f2937; line-height: 1.5; margin-bottom: 20px;">
+                        Recibimos tu solicitud de <strong style="color: #6366f1;">${tipo}</strong>. ${fecha && hora ? 'Tu reunión está confirmada para el ' + fecha + ' a las ' + hora + '.' : 'Nos pondremos en contacto contigo a la brevedad.'}
                       </p>
 
                       <!-- Detalles en Card -->
-                      <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 30px;">
+                      <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 15px;">
                         <tr>
-                          <td style="padding: 20px;">
-                            <h3 style="color: #6366f1; margin: 0 0 15px 0; font-size: 18px;">📋 Detalles de tu solicitud:</h3>
-                            ${fecha && hora ? `<p style="margin: 8px 0; color: #4b5563;"><strong>📅 Fecha y hora:</strong> ${fecha} a las ${hora}</p>` : ''}
-                            <p style="margin: 8px 0; color: #4b5563;"><strong>📧 Email:</strong> ${email}</p>
-                            <p style="margin: 8px 0; color: #4b5563;"><strong>📱 WhatsApp:</strong> ${whatsapp}</p>
-                            ${webInstagram ? `<p style="margin: 8px 0; color: #4b5563;"><strong>🌐 Web/Instagram:</strong> ${webInstagram}</p>` : ''}
-                            ${descripcion ? `<p style="margin: 8px 0; color: #4b5563;"><strong>💬 Tu mensaje:</strong><br>${descripcion}</p>` : ''}
+                          <td style="padding: 15px;">
+                            <h3 style="color: #6366f1; margin: 0 0 10px 0; font-size: 16px;">📋 Detalles:</h3>
+                            ${fecha && hora ? `<p style="margin: 5px 0; color: #4b5563; font-size: 14px;"><strong>📅 Fecha y hora:</strong> ${fecha} a las ${hora}</p>` : ''}
+                            <p style="margin: 5px 0; color: #4b5563; font-size: 14px;"><strong>📧 Email:</strong> ${email}</p>
+                            <p style="margin: 5px 0; color: #4b5563; font-size: 14px;"><strong>📱 WhatsApp:</strong> ${whatsapp}</p>
+                            ${webInstagram ? `<p style="margin: 5px 0; color: #4b5563; font-size: 14px;"><strong>🌐 Web/Instagram:</strong> ${webInstagram}</p>` : ''}
+                            ${descripcion ? `<p style="margin: 5px 0; color: #4b5563; font-size: 14px;"><strong>💬 Mensaje:</strong><br>${descripcion}</p>` : ''}
                           </td>
                         </tr>
                       </table>
 
-                      <!-- Próximos pasos -->
-                      <div style="background-color: #eff6ff; border-left: 4px solid #6366f1; padding: 15px 20px; border-radius: 4px; margin-bottom: 30px;">
-                        <p style="margin: 0; color: #1e40af; font-weight: bold;">✅ ¿Qué sigue ahora?</p>
-                        <p style="margin: 10px 0 0 0; color: #1e3a8a; font-size: 14px;">
-                          Nuestro equipo revisará tu solicitud y se pondrá en contacto contigo a la brevedad para confirmar los detalles y agendar una reunión.
-                        </p>
-                      </div>
+                      ${googleCalendarLink ? `
+                      <!-- Botón Google Calendar -->
+                      <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 15px;">
+                        <tr>
+                          <td align="center">
+                            <a href="${googleCalendarLink}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; font-size: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                              📅 Agregar a Google Calendar
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                      ` : ''}
 
-                      <p style="font-size: 14px; color: #6b7280; line-height: 1.6;">
-                        Si tenés alguna pregunta urgente, no dudes en responder este email.
+                      <p style="font-size: 13px; color: #6b7280; line-height: 1.5; margin: 0;">
+                        Si tenés alguna pregunta, respondé este email.
                       </p>
                     </td>
                   </tr>
 
-                  <!-- Footer con Logo IA MOTORSHUB - Ultra compacto -->
+                  <!-- Footer con Logo IA MOTORSHUB - Super compacto -->
                   <tr>
-                    <td style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); padding: 15px 30px; text-align: center; border-radius: 0 0 8px 8px;">
-                      <p style="color: #ffffff; margin: 0 0 5px 0; font-size: 15px; font-weight: bold;">Equipo Rentals AI</p>
-                      <p style="color: #d1d5db; margin: 0 0 3px 0; font-size: 12px;">Powered by</p>
-                      <img src="https://i.ibb.co/S79mNmfV/IAMOTORSHUB-LOGO-BLANCO.png" alt="IA MOTORSHUB" width="180" height="60" style="max-width: 180px; height: auto; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; border: 0;">
-                      <p style="color: #9ca3af; margin: 3px 0 3px 0; font-size: 11px; line-height: 1.5;">
-                        📍 Bahía Blanca, Buenos Aires, Argentina<br>
+                    <td style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); padding: 8px 20px; text-align: center; border-radius: 0 0 8px 8px;">
+                      <p style="color: #ffffff; margin: 0 0 3px 0; font-size: 14px; font-weight: bold;">Equipo Rentals AI</p>
+                      <p style="color: #d1d5db; margin: 0 0 2px 0; font-size: 11px;">Powered by</p>
+                      <img src="https://i.ibb.co/S79mNmfV/IAMOTORSHUB-LOGO-BLANCO.png" alt="IA MOTORSHUB" width="160" height="53" style="max-width: 160px; height: auto; margin-bottom: 3px; display: block; margin-left: auto; margin-right: auto; border: 0;">
+                      <p style="color: #9ca3af; margin: 2px 0 2px 0; font-size: 10px; line-height: 1.4;">
+                        📍 Bahía Blanca, Buenos Aires<br>
                         📧 contacto@iamotorshub.com<br>
-                        📱 WhatsApp: +54 9 291 520-6692
+                        📱 +54 9 291 520-6692
                       </p>
-                      <p style="color: #6b7280; margin: 5px 0 0 0; font-size: 10px;">
+                      <p style="color: #6b7280; margin: 3px 0 0 0; font-size: 9px;">
                         © ${new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
                       </p>
                     </td>
