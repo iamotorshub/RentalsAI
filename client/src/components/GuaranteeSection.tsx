@@ -61,19 +61,19 @@ export default function GuaranteeSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16 px-4">
           {/* Urgency Timer */}
-          <div className="inline-flex items-center gap-2 bg-destructive/10 border border-destructive/20 text-destructive px-6 py-3 rounded-full mb-6">
-            <Timer className="w-5 h-5" />
-            <span className="font-medium" data-testid="text-guarantee-countdown">
-              Oferta Especial Temporada 2025: {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m
+          <div className="inline-flex items-center gap-2 bg-destructive/10 border border-destructive/20 text-destructive px-3 sm:px-6 py-2 sm:py-3 rounded-full mb-6 max-w-full">
+            <Timer className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+            <span className="font-medium text-xs sm:text-base" data-testid="text-guarantee-countdown">
+              Oferta Especial 2025: {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4 sm:mb-6">
             <span className="text-golden">COMPROMISO</span> Real Contigo
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             Te acompañamos paso a paso para que aproveches al máximo todas las funcionalidades de la plataforma
           </p>
         </div>
@@ -121,7 +121,7 @@ export default function GuaranteeSection() {
         </div>
 
         {/* Central Commitment Statement */}
-        <Card className="p-12 text-center border-golden/30 mb-12 relative overflow-hidden">
+        <Card className="p-6 sm:p-12 text-center border-golden/30 mb-12 relative overflow-hidden">
           {/* Imagen de fondo única profesional con overlay para legibilidad */}
           <div className="absolute inset-0">
             <img
@@ -132,43 +132,45 @@ export default function GuaranteeSection() {
             {/* Overlay más fuerte en mobile/tablet para mejor legibilidad */}
             <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/25 md:from-black/30 md:via-black/20 md:to-black/25 max-md:from-black/70 max-md:via-black/60 max-md:to-black/65"></div>
           </div>
-          
-          <div className="relative z-10">
-            <Award className="w-16 h-16 text-golden mx-auto mb-6 animate-[fadeInUp_0.6s_ease-out] drop-shadow-[0_4px_12px_rgba(0,0,0,1)]" />
 
-            <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 text-white animate-[fadeInUp_0.6s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards] drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_2px_2px_6px_rgb(0_0_0)]">
+          <div className="relative z-10">
+            <Award className="w-12 h-12 sm:w-16 sm:h-16 text-golden mx-auto mb-4 sm:mb-6 animate-[fadeInUp_0.6s_ease-out] drop-shadow-[0_4px_12px_rgba(0,0,0,1)]" />
+
+            <h3 className="text-xl sm:text-3xl md:text-4xl font-display font-bold mb-4 sm:mb-6 text-white animate-[fadeInUp_0.6s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards] drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_2px_2px_6px_rgb(0_0_0)]">
               NUESTRO <span className="text-golden drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_2px_2px_6px_rgb(0_0_0)]">COMPROMISO</span>
             </h3>
 
-            <p className="text-xl text-white font-bold mb-8 max-w-4xl mx-auto animate-[fadeInUp_0.6s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards] drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_4px_rgb(0_0_0)] leading-relaxed">
+            <p className="text-sm sm:text-xl text-white font-bold mb-6 sm:mb-8 max-w-4xl mx-auto animate-[fadeInUp_0.6s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards] drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_4px_rgb(0_0_0)] leading-relaxed px-2">
               Te garantizamos una <span className="font-black text-golden drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_4px_rgb(0_0_0)]">configuración perfecta</span>,
               integración completa con todas tus plataformas existentes, y
               <span className="font-black text-golden drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_4px_rgb(0_0_0)]"> soporte especializado continuo</span> para maximizar tu ocupación.
             </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Badge className="bg-success text-success-foreground px-4 py-2 animate-[fadeInUp_0.6s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards] shadow-lg">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 px-2">
+            <Badge className="bg-success text-success-foreground px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm animate-[fadeInUp_0.6s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards] shadow-lg">
               Soporte Incluido
             </Badge>
-            <Badge className="bg-primary text-primary-foreground px-4 py-2 animate-[fadeInUp_0.6s_ease-out_0.7s] opacity-0 [animation-fill-mode:forwards] shadow-lg">
+            <Badge className="bg-primary text-primary-foreground px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm animate-[fadeInUp_0.6s_ease-out_0.7s] opacity-0 [animation-fill-mode:forwards] shadow-lg">
               Integración Completa
             </Badge>
-            <Badge className="bg-accent text-accent-foreground px-4 py-2 animate-[fadeInUp_0.6s_ease-out_0.8s] opacity-0 [animation-fill-mode:forwards] shadow-lg">
+            <Badge className="bg-accent text-accent-foreground px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm animate-[fadeInUp_0.6s_ease-out_0.8s] opacity-0 [animation-fill-mode:forwards] shadow-lg">
               Sin Costos Ocultos
             </Badge>
           </div>
 
-          <Button
-            size="lg"
-            className="bg-golden hover:bg-golden/90 text-golden-foreground text-xl font-bold px-12 py-6 rounded-full shadow-2xl animate-[fadeInUp_0.6s_ease-out_1s] opacity-0 [animation-fill-mode:forwards]"
-            onClick={() => {
-              const event = new CustomEvent('openContactForm', { detail: { source: 'Agendar Demo Personalizada' } });
-              window.dispatchEvent(event);
-            }}
-            data-testid="button-commitment-cta"
-          >
-            AGENDAR DEMO PERSONALIZADA
-          </Button>
+          <div className="px-2">
+            <Button
+              size="lg"
+              className="bg-golden hover:bg-golden/90 text-golden-foreground text-sm sm:text-xl font-bold px-6 sm:px-12 py-4 sm:py-6 rounded-full shadow-2xl animate-[fadeInUp_0.6s_ease-out_1s] opacity-0 [animation-fill-mode:forwards] w-full max-w-md mx-auto"
+              onClick={() => {
+                const event = new CustomEvent('openContactForm', { detail: { source: 'Agendar Demo Personalizada' } });
+                window.dispatchEvent(event);
+              }}
+              data-testid="button-commitment-cta"
+            >
+              AGENDAR DEMO PERSONALIZADA
+            </Button>
+          </div>
           </div>
         </Card>
 

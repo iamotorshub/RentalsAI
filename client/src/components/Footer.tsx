@@ -6,8 +6,8 @@ export default function Footer() {
       {/* Decorative top border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-golden to-accent"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <div className="grid md:grid-cols-3 gap-8 mb-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+        <div className="grid md:grid-cols-3 gap-8 mb-1">
           {/* Logo Rentals AI - Agrandado 25% + Responsive */}
           <div className="text-center md:text-left">
             <img
@@ -98,15 +98,15 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 my-1"></div>
+        <div className="border-t border-gray-700 my-0"></div>
 
-        {/* Powered by IA MOTORSHUB - Logo más grande */}
-        <div className="text-center">
+        {/* Powered by IA MOTORSHUB - Profesional y compacto */}
+        <div className="text-center py-1">
           <p className="text-gray-400 text-sm mb-0">Powered by</p>
           <img
             src="/images/logo-footer.png"
             alt="IA MOTORSHUB"
-            className="h-[400px] w-auto mx-auto mb-0"
+            className="h-[400px] w-auto mx-auto -my-32"
             style={{ maxWidth: '100%', objectFit: 'contain' }}
             onError={(e) => {
               // Fallback si no existe el logo
@@ -120,15 +120,15 @@ export default function Footer() {
             </h3>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-0 mt-1">
-            <span>🚀 Inteligencia Artificial</span>
-            <span className="hidden sm:inline">•</span>
-            <span>💡 Soluciones Tecnológicas</span>
-            <span className="hidden sm:inline">•</span>
-            <span>🎯 Automatización de Negocios</span>
+          <div className="flex flex-wrap justify-center gap-4 text-base font-semibold mb-0 -mt-4 animate-[fadeInUp_0.8s_ease-out]">
+            <span className="text-golden animate-[fadeInUp_0.8s_ease-out_0.1s] opacity-0 [animation-fill-mode:forwards]">🚀 Inteligencia Artificial</span>
+            <span className="hidden sm:inline text-gray-500">•</span>
+            <span className="text-accent animate-[fadeInUp_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">💡 Soluciones Tecnológicas</span>
+            <span className="hidden sm:inline text-gray-500">•</span>
+            <span className="text-success animate-[fadeInUp_0.8s_ease-out_0.3s] opacity-0 [animation-fill-mode:forwards]">🎯 Automatización de Negocios</span>
           </div>
 
-          <p className="text-gray-500 text-xs mt-1 mb-0">
+          <p className="text-gray-500 text-xs mt-1 mb-0 animate-[fadeInUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
             © {new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
           </p>
         </div>
