@@ -175,13 +175,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
                     </td>
                   </tr>
 
-                  <!-- Footer con Logo IA MOTORSHUB - Compacto sin fondo oscuro -->
+                  <!-- Footer con Logo IA MOTORSHUB - Compacto con gradiente -->
                   <tr>
-                    <td style="background-color: #1f2937; padding: 5px 20px 3px 20px; text-align: center; border-radius: 0 0 8px 8px;">
+                    <td style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); padding: 5px 20px 3px 20px; text-align: center; border-radius: 0 0 8px 8px;">
                       <p style="color: #ffffff; margin: 0 0 2px 0; font-size: 14px; font-weight: bold;">Equipo Rentals AI</p>
-                      <p style="color: #d1d5db; margin: 0 0 1px 0; font-size: 11px;">Powered by</p>
-                      <img src="https://i.ibb.co/S79mNmfV/IAMOTORSHUB-LOGO-BLANCO.png" alt="IA MOTORSHUB" width="240" height="80" style="max-width: 240px; height: auto; margin: 0; display: block; margin-left: auto; margin-right: auto; border: 0;">
-                      <p style="color: #9ca3af; margin: 2px 0 2px 0; font-size: 10px; line-height: 1.3;">
+                      <p style="color: #d1d5db; margin: 0; font-size: 11px; line-height: 1.8;">Powered by</p>
+                      <img src="https://i.ibb.co/S79mNmfV/IAMOTORSHUB-LOGO-BLANCO.png" alt="IA MOTORSHUB" width="320" height="107" style="max-width: 320px; height: auto; margin: 0; display: block; margin-left: auto; margin-right: auto; border: 0;">
+                      <p style="color: #9ca3af; margin: 0; font-size: 10px; line-height: 1.8;">
                         📍 Bahía Blanca, Buenos Aires<br>
                         📧 contacto@iamotorshub.com<br>
                         📱 +54 9 291 520-6692
