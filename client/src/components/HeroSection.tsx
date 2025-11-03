@@ -82,7 +82,7 @@ export default function HeroSection() {
       </button>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto pl-4 pr-8 sm:px-6 lg:px-8 text-center">
         {/* Urgency Timer */}
         <div className="inline-flex items-center gap-2 bg-destructive/90 backdrop-blur-sm text-destructive-foreground px-4 py-2 rounded-full mb-6 animate-pulse max-w-full">
           <Timer className="w-4 h-4 flex-shrink-0" />
@@ -92,14 +92,14 @@ export default function HeroSection() {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-[0_6px_12px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] px-2">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-[0_6px_12px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] pl-0 pr-2 sm:px-2">
           GESTIÓN INTELIGENTE
           <br />
           <span className="text-golden drop-shadow-[0_6px_12px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">PARA TUS ALQUILERES</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-white font-bold mb-3 sm:mb-4 max-w-4xl mx-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] px-2">
+        <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-white font-bold mb-3 sm:mb-4 max-w-4xl mx-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] pl-0 pr-2 sm:px-2">
           Integración directa con <span className="font-bold text-golden drop-shadow-[0_4px_8px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">Airbnb, Booking y más</span> + Soporte completo para maximizar tu ocupación
         </p>
 
