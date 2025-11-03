@@ -100,13 +100,13 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-gray-700 my-1"></div>
 
-        {/* Powered by IA MOTORSHUB - Logo optimizado sin aire */}
+        {/* Powered by IA MOTORSHUB - Logo ultra compacto */}
         <div className="text-center">
           <p className="text-gray-400 text-sm mb-0">Powered by</p>
           <img
             src="/images/logo-footer.png"
             alt="IA MOTORSHUB"
-            className="h-[400px] w-auto mx-auto -my-16"
+            className="h-[400px] w-auto mx-auto -my-24"
             style={{ maxWidth: '100%', objectFit: 'contain' }}
             onError={(e) => {
               // Fallback si no existe el logo
@@ -120,7 +120,7 @@ export default function Footer() {
             </h3>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-0 mt-0">
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-0 -mt-2">
             <span>🚀 Inteligencia Artificial</span>
             <span className="hidden sm:inline">•</span>
             <span>💡 Soluciones Tecnológicas</span>
@@ -128,7 +128,7 @@ export default function Footer() {
             <span>🎯 Automatización de Negocios</span>
           </div>
 
-          <p className="text-gray-500 text-xs mt-1 mb-0">
+          <p className="text-gray-500 text-xs mt-0 mb-0">
             © {new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
           </p>
         </div>
