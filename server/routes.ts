@@ -92,11 +92,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
             <tr>
               <td align="center">
                 <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                  <!-- Header con Logo Rentals AI - Fondo claro -->
+                  <!-- Header con Logo Rentals AI - Optimizado -->
                   <tr>
-                    <td style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                      <img src="https://i.ibb.co/9mCB4S3R/rentalsai-finalsinfondo.png" alt="Rentals AI" width="220" height="220" style="max-width: 220px; height: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; border: 0;">
-                      <h1 style="color: #1f2937; margin: 0; font-size: 28px; font-weight: bold;">¡Gracias por contactarnos!</h1>
+                    <td style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 20px 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                      <img src="https://i.ibb.co/9mCB4S3R/rentalsai-finalsinfondo.png" alt="Rentals AI" width="180" height="180" style="max-width: 180px; height: auto; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; border: 0;">
+                      <h1 style="color: #1f2937; margin: 0 0 5px 0; font-size: 26px; font-weight: bold;">¡Gracias por contactarnos!</h1>
+                      <p style="color: #6366f1; margin: 0; font-size: 14px; font-weight: 600;">Transformamos propiedades en máquinas de generar ingresos</p>
                     </td>
                   </tr>
 
@@ -138,18 +139,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
                     </td>
                   </tr>
 
-                  <!-- Footer con Logo IA MOTORSHUB - Fondo oscuro -->
+                  <!-- Footer con Logo IA MOTORSHUB - Optimizado -->
                   <tr>
-                    <td style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); padding: 40px 30px; text-align: center; border-radius: 0 0 8px 8px;">
-                      <p style="color: #ffffff; margin: 0 0 15px 0; font-size: 16px; font-weight: bold;">Equipo Rentals AI</p>
-                      <p style="color: #d1d5db; margin: 0 0 15px 0; font-size: 14px;">Powered by</p>
-                      <img src="https://i.ibb.co/S79mNmfV/IAMOTORSHUB-LOGO-BLANCO.png" alt="IA MOTORSHUB" width="240" height="80" style="max-width: 240px; height: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; border: 0;">
-                      <p style="color: #9ca3af; margin: 15px 0 5px 0; font-size: 13px; line-height: 1.6;">
+                    <td style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); padding: 20px 30px; text-align: center; border-radius: 0 0 8px 8px;">
+                      <p style="color: #ffffff; margin: 0 0 8px 0; font-size: 16px; font-weight: bold;">Equipo Rentals AI</p>
+                      <p style="color: #d1d5db; margin: 0 0 5px 0; font-size: 13px;">Powered by</p>
+                      <img src="https://i.ibb.co/S79mNmfV/IAMOTORSHUB-LOGO-BLANCO.png" alt="IA MOTORSHUB" width="200" height="67" style="max-width: 200px; height: auto; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; border: 0;">
+                      <p style="color: #9ca3af; margin: 5px 0 5px 0; font-size: 12px; line-height: 1.6;">
                         📍 Bahía Blanca, Buenos Aires, Argentina<br>
                         📧 contacto@iamotorshub.com<br>
                         📱 WhatsApp: +54 9 291 520-6692
                       </p>
-                      <p style="color: #6b7280; margin: 20px 0 0 0; font-size: 11px;">
+                      <p style="color: #6b7280; margin: 10px 0 0 0; font-size: 11px;">
                         © ${new Date().getFullYear()} IA MOTORSHUB. Todos los derechos reservados.
                       </p>
                     </td>
