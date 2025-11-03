@@ -100,7 +100,7 @@ export default function AITechnologyShowcase() {
         </div>
 
         {/* Pilares */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-12 sm:mb-16 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-12 sm:mb-16">
           {pillars.map((pillar, index) => (
             <motion.div
               key={index}
@@ -108,7 +108,7 @@ export default function AITechnologyShowcase() {
               transition={{ type: "spring", stiffness: 200 }}
             >
               <Card
-                className={`p-4 sm:p-6 cursor-pointer transition-all duration-300 backdrop-blur-md ${
+                className={`p-3 sm:p-6 cursor-pointer transition-all duration-300 backdrop-blur-md ${
                   selectedPillar === index
                     ? "border-accent bg-accent/20 shadow-2xl ring-2 ring-accent/60"
                     : "border-white/20 bg-black/40 hover:border-accent/50 hover:bg-black/50"
@@ -117,18 +117,18 @@ export default function AITechnologyShowcase() {
               >
                 <div className="text-center">
                   <div
-                    className={`inline-flex p-3 sm:p-4 rounded-xl mb-3 sm:mb-4 shadow-xl transition-all ${
+                    className={`inline-flex p-2 sm:p-4 rounded-xl mb-2 sm:mb-4 shadow-xl transition-all ${
                       selectedPillar === index
                         ? "bg-accent text-white shadow-accent/50"
                         : "bg-white/30 text-white shadow-black/50"
                     }`}
                   >
-                    <pillar.icon className="w-6 h-6 sm:w-8 sm:h-8" />
+                    <pillar.icon className="w-5 h-5 sm:w-8 sm:h-8" />
                   </div>
-                  <h3 className="font-bold text-xs sm:text-sm text-white mb-1 tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                  <h3 className="font-bold text-[10px] sm:text-sm text-white mb-1 tracking-tight sm:tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-tight">
                     {pillar.title}
                   </h3>
-                  <p className="text-[10px] sm:text-xs text-white/80 font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">{pillar.subtitle}</p>
+                  <p className="text-[9px] sm:text-xs text-white/80 font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] leading-tight">{pillar.subtitle}</p>
                 </div>
               </Card>
             </motion.div>
@@ -144,19 +144,19 @@ export default function AITechnologyShowcase() {
             exit={{ opacity: 0, y: -40 }}
             transition={{ duration: 0.7 }}
           >
-            <Card className="relative overflow-hidden p-6 sm:p-8 lg:p-16 bg-black/50 backdrop-blur-xl border border-white/30 shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
+            <Card className="relative overflow-hidden p-4 sm:p-8 lg:p-16 bg-black/50 backdrop-blur-xl border border-white/30 shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 items-start">
                 {/* Texto */}
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="p-4 rounded-xl bg-accent text-white shadow-2xl ring-2 ring-white/30 shadow-accent/30">
-                      <current.icon className="w-8 h-8" />
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="p-2 sm:p-4 rounded-xl bg-accent text-white shadow-2xl ring-2 ring-white/30 shadow-accent/30 flex-shrink-0">
+                      <current.icon className="w-6 h-6 sm:w-8 sm:h-8" />
                     </div>
-                    <div>
-                      <h3 className="text-3xl font-bold text-white drop-shadow-[0_4px_12px_rgba(0,0,0,1)] [text-shadow:_2px_2px_8px_rgb(0_0_0_/_90%)]">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-base sm:text-3xl font-bold text-white drop-shadow-[0_4px_12px_rgba(0,0,0,1)] [text-shadow:_2px_2px_8px_rgb(0_0_0_/_90%)] leading-tight break-words">
                         {current.title}
                       </h3>
-                      <p className="text-golden text-lg font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                      <p className="text-golden text-xs sm:text-lg font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-tight mt-1">
                         {current.subtitle}
                       </p>
                     </div>
@@ -238,10 +238,10 @@ export default function AITechnologyShowcase() {
         </AnimatePresence>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-12 sm:mt-16 px-4">
           <Button
             size="lg"
-            className="relative bg-gradient-to-r from-accent via-accent to-golden text-white font-bold text-lg px-12 py-7 rounded-full shadow-2xl overflow-hidden group hover:scale-105 transition-transform border-2 border-white/30"
+            className="relative bg-gradient-to-r from-accent via-accent to-golden text-white font-bold text-sm sm:text-lg px-6 sm:px-12 py-5 sm:py-7 rounded-full shadow-2xl overflow-hidden group hover:scale-105 transition-transform border-2 border-white/30 w-full max-w-md mx-auto"
             onClick={() =>
               window.dispatchEvent(
                 new CustomEvent("openContactForm", {

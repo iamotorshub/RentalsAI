@@ -82,12 +82,12 @@ export default function HeroSection() {
       </button>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 text-center">
         {/* Urgency Timer */}
-        <div className="inline-flex items-center gap-2 bg-destructive/90 backdrop-blur-sm text-destructive-foreground px-4 py-2 rounded-full mb-6 animate-pulse">
-          <Timer className="w-4 h-4" />
-          <span className="text-sm font-medium" data-testid="text-countdown">
-            Temporada 2025 - {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m restantes
+        <div className="inline-flex items-center gap-2 bg-destructive/90 backdrop-blur-sm text-destructive-foreground px-4 py-2 rounded-full mb-6 animate-pulse max-w-full">
+          <Timer className="w-4 h-4 flex-shrink-0" />
+          <span className="text-xs sm:text-sm font-medium whitespace-nowrap" data-testid="text-countdown">
+            Temporada 2025 - {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m
           </span>
         </div>
 
@@ -99,36 +99,36 @@ export default function HeroSection() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white font-bold mb-3 sm:mb-4 max-w-4xl mx-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] px-4">
+        <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-white font-bold mb-3 sm:mb-4 max-w-4xl mx-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] px-2">
           Integración directa con <span className="font-bold text-golden drop-shadow-[0_4px_8px_rgba(0,0,0,0.95)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">Airbnb, Booking y más</span> + Soporte completo para maximizar tu ocupación
         </p>
 
         {/* Key Benefits */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 max-w-2xl mx-auto mx-4">
-          <p className="text-sm sm:text-base md:text-lg text-white/80 mb-2">
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 max-w-2xl mx-auto">
+          <p className="text-xs sm:text-base md:text-lg text-white/80 mb-2">
             Sincronización automática + IA 24/7
           </p>
-          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-golden">
+          <p className="text-lg sm:text-2xl md:text-3xl font-bold text-golden">
             CERO TRABAJO MANUAL
           </p>
         </div>
 
         {/* Split Preview Before/After */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 max-w-4xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 max-w-4xl mx-auto">
           <div className="bg-destructive/20 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-destructive/30">
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">GESTIÓN MANUAL</h3>
-            <div className="space-y-2 text-sm sm:text-base text-white/80">
-              <p className="flex items-center gap-2">📱 Actualizaciones manuales en cada plataforma</p>
+            <h3 className="text-base sm:text-xl font-bold text-white mb-3 sm:mb-4">GESTIÓN MANUAL</h3>
+            <div className="space-y-2 text-xs sm:text-base text-white/80">
+              <p className="flex items-center gap-2">📱 Actualizaciones manuales</p>
               <p className="flex items-center gap-2">⏰ Calendarios desincronizados</p>
-              <p className="flex items-center gap-2">📧 Respuestas lentas a consultas</p>
+              <p className="flex items-center gap-2">📧 Respuestas lentas</p>
             </div>
           </div>
           <div className="bg-success/20 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-success/30">
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">CON RENTALS AI</h3>
-            <div className="space-y-2 text-sm sm:text-base text-white/80">
-              <p className="flex items-center gap-2"><Bot className="w-4 h-4" /> Integración directa con todas las plataformas</p>
-              <p className="flex items-center gap-2">⚡ Sincronización automática en tiempo real</p>
-              <p className="flex items-center gap-2"><TrendingUp className="w-4 h-4" /> Asistente IA que nunca duerme</p>
+            <h3 className="text-base sm:text-xl font-bold text-white mb-3 sm:mb-4">CON RENTALS AI</h3>
+            <div className="space-y-2 text-xs sm:text-base text-white/80">
+              <p className="flex items-center gap-2"><Bot className="w-4 h-4 flex-shrink-0" /> Integración directa</p>
+              <p className="flex items-center gap-2">⚡ Sincronización automática</p>
+              <p className="flex items-center gap-2"><TrendingUp className="w-4 h-4 flex-shrink-0" /> IA que nunca duerme</p>
             </div>
           </div>
         </div>
@@ -148,23 +148,25 @@ export default function HeroSection() {
         </div>
 
         {/* Main CTA Button */}
-        <Button
-          size="lg"
-          className="relative bg-gradient-to-r from-accent via-accent to-golden text-white font-bold text-base sm:text-lg px-8 sm:px-12 py-5 sm:py-7 rounded-full shadow-2xl overflow-hidden group hover:scale-105 transition-transform border-2 border-white/30 mx-4"
-          onClick={() => {
-            const event = new CustomEvent('openContactForm', { detail: { source: 'Ver Demo en Vivo - Hero' } });
-            window.dispatchEvent(event);
-          }}
-          data-testid="button-main-cta"
-        >
-          <span className="relative z-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">VER DEMO EN VIVO</span>
-          <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition duration-500 rounded-full"></div>
-        </Button>
+        <div className="px-2">
+          <Button
+            size="lg"
+            className="relative bg-gradient-to-r from-accent via-accent to-golden text-white font-bold text-sm sm:text-lg px-6 sm:px-12 py-4 sm:py-7 rounded-full shadow-2xl overflow-hidden group hover:scale-105 transition-transform border-2 border-white/30 w-full max-w-md mx-auto"
+            onClick={() => {
+              const event = new CustomEvent('openContactForm', { detail: { source: 'Ver Demo en Vivo - Hero' } });
+              window.dispatchEvent(event);
+            }}
+            data-testid="button-main-cta"
+          >
+            <span className="relative z-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">VER DEMO EN VIVO</span>
+            <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition duration-500 rounded-full"></div>
+          </Button>
+        </div>
 
         {/* Secondary CTA */}
         <p className="text-white/70 mt-4 px-4">
           <button
-            className="underline hover:text-golden transition-colors text-sm"
+            className="underline hover:text-golden transition-colors text-xs sm:text-sm"
             data-testid="button-demo"
             onClick={() => console.log('Demo clicked')}
           >
