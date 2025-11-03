@@ -8,12 +8,12 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="grid md:grid-cols-3 gap-8 mb-2">
-          {/* Logo Rentals AI */}
+          {/* Logo Rentals AI - Agrandado 25% + Responsive */}
           <div className="text-center md:text-left">
             <img
               src="/images/rentalsai-finalsinfondo.png"
               alt="Rentals AI"
-              className="h-24 sm:h-32 mx-auto md:mx-0 mb-3 sm:mb-4 filter drop-shadow-lg"
+              className="h-32 sm:h-40 mx-auto md:mx-0 mb-3 sm:mb-4 filter drop-shadow-lg"
               onError={(e) => {
                 // Fallback si no existe el logo
                 e.currentTarget.style.display = 'none';
@@ -100,13 +100,13 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-gray-700 my-1"></div>
 
-        {/* Powered by IA MOTORSHUB */}
+        {/* Powered by IA MOTORSHUB - Logo agrandado al doble+ */}
         <div className="text-center">
           <p className="text-gray-400 text-sm mb-0">Powered by</p>
           <img
             src="/images/logo-footer.png"
             alt="IA MOTORSHUB"
-            className="h-[120px] w-auto mx-auto mb-0"
+            className="h-[280px] w-auto mx-auto mb-0"
             style={{ maxWidth: '100%', objectFit: 'contain' }}
             onError={(e) => {
               // Fallback si no existe el logo
