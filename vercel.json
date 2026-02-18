@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "api/webhook.js": {
+      "runtime": "@vercel/node"
+    },
+    "api/test.js": {
+      "runtime": "@vercel/node"
+    }
+  }
+}
