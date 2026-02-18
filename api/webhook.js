@@ -1,13 +1,36 @@
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+const fetch = require('node-fetch');
+
+exports.handler = async (event, context) => {
+  // Handle CORS
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS'
+      },
+      body: ''
+    };
+  }
+
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      headers: { 'Access-Control-Allow-Origin': '*' },
+      body: JSON.stringify({ error: 'Method not allowed' })
+    };
   }
 
   try {
-    const data = req.body;
+    const data = JSON.parse(event.body || '{}');
 
     if (!data) {
-      return res.status(400).json({ error: "No data received" });
+      return {
+        statusCode: 400,
+        headers: { 'Access-Control-Allow-Origin': '*' },
+        body: JSON.stringify({ error: "No data received" })
+      };
     }
 
     const nombre = data.nombre || 'No especificado';
@@ -43,13 +66,21 @@ export default async function handler(req, res) {
 
     if (response.ok) {
       console.log("✅ Mensaje enviado a Telegram:", mensaje);
-      res.json({ status: "success", message: "Datos enviados correctamente" });
+      return {
+        statusCode: 200,
+        headers: { 'Access-Control-Allow-Origin': '*' },
+        body: JSON.stringify({ status: "success", message: "Datos enviados correctamente" })
+      };
     } else {
       throw new Error('Error enviando a Telegram');
     }
 
   } catch (error) {
     console.error("❌ Error en webhook RentalsAI:", error);
-    res.status(500).json({ error: "Error procesando webhook", details: error.message });
+    return {
+      statusCode: 500,
+      headers: { 'Access-Control-Allow-Origin': '*' },
+      body: JSON.stringify({ error: "Error procesando webhook", details: error.message })
+    };
   }
-}
+};

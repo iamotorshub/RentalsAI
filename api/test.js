@@ -1,6 +1,25 @@
-export default async function handler(req, res) {
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
+const fetch = require('node-fetch');
+
+exports.handler = async (event, context) => {
+  // Handle CORS
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS'
+      },
+      body: ''
+    };
+  }
+
+  if (event.httpMethod !== 'GET') {
+    return {
+      statusCode: 405,
+      headers: { 'Access-Control-Allow-Origin': '*' },
+      body: JSON.stringify({ error: 'Method not allowed' })
+    };
   }
 
   try {
@@ -21,13 +40,21 @@ export default async function handler(req, res) {
     });
 
     if (response.ok) {
-      res.json({ status: "test_sent", message: "Test enviado a Telegram" });
+      return {
+        statusCode: 200,
+        headers: { 'Access-Control-Allow-Origin': '*' },
+        body: JSON.stringify({ status: "test_sent", message: "Test enviado a Telegram" })
+      };
     } else {
       throw new Error('Error en test de Telegram');
     }
 
   } catch (error) {
     console.error("❌ Error en test:", error);
-    res.status(500).json({ error: "Error en test", details: error.message });
+    return {
+      statusCode: 500,
+      headers: { 'Access-Control-Allow-Origin': '*' },
+      body: JSON.stringify({ error: "Error en test", details: error.message })
+    };
   }
-}
+};
