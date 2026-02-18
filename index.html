@@ -1,190 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rentals AI Costa - Gestión Inteligente de Alquileres</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+ <meta name="theme-color" content="#2563eb" />
+ <meta name="mobile-web-app-capable" content="yes" />
+ <meta name="apple-mobile-web-app-capable" content="yes" />
+ <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+ <title>Alquiler Temporada Monte Hermoso 2025 | RENTALS AI COSTA - Propiedades en Bahía Blanca</title>
+ <meta name="description" content="Alquiler temporada Monte Hermoso 2025. Departamentos, casas y cabañas en Monte Hermoso con IA. Alquileres temporarios en Bahía Blanca. Reservas automáticas 24/7. ¡300% más reservas garantizadas!" />
+ <meta name="keywords" content="alquiler temporada monte hermoso, alquileres monte hermoso, propiedades monte hermoso, alquiler temporada bahia blanca, departamentos monte hermoso, casas monte hermoso, cabañas monte hermoso, alquileres temporarios, verano 2025, costa atlantica, inmobiliaria monte hermoso, alquiler vacaciones" />
+ <meta name="author" content="RENTALS AI COSTA" />
+ <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+ <meta name="googlebot" content="index, follow" />
+ <link rel="canonical" href="https://rentalsaicosta.com" />
 
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
+ <!-- Favicons -->
+ <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+ <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+ <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+ <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+ <link rel="manifest" href="/manifest.json" />
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-        }
+ <!-- Open Graph / Facebook -->
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="https://rentalsaicosta.com" />
+ <meta property="og:site_name" content="RENTALS AI COSTA" />
+ <meta property="og:title" content="Alquiler Temporada Monte Hermoso 2025 | RENTALS AI COSTA" />
+ <meta property="og:description" content="Alquiler temporada en Monte Hermoso y Bahía Blanca. Departamentos, casas y cabañas con tecnología IA. 300% más reservas garantizadas. Atención 24/7." />
+ <meta property="og:image" content="https://rentalsaicosta.com/og-image.jpg" />
+ <meta property="og:image:width" content="1200" />
+ <meta property="og:image:height" content="630" />
+ <meta property="og:locale" content="es_AR" />
 
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-            z-index: 1;
-            position: relative;
-        }
+ <!-- Twitter Card -->
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:url" content="https://rentalsaicosta.com" />
+ <meta name="twitter:title" content="Alquiler Temporada Monte Hermoso 2025 | RENTALS AI COSTA" />
+ <meta name="twitter:description" content="Alquiler temporada en Monte Hermoso. Departamentos y casas con IA. Reservas automáticas 24/7." />
+ <meta name="twitter:image" content="https://rentalsaicosta.com/og-image.jpg" />
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+ <!-- Geo Tags -->
+ <meta name="geo.region" content="AR-BA" />
+ <meta name="geo.placename" content="Monte Hermoso, Bahía Blanca, Buenos Aires, Argentina" />
+ <meta name="geo.position" content="-38.9827;-61.2949" />
+ <meta name="ICBM" content="-38.9827, -61.2949" />
 
-        .hero-subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
+ <!-- Schema.org Structured Data -->
+ <script type="application/ld+json">
+ {
+   "@context": "https://schema.org",
+   "@type": "RealEstateAgent",
+   "name": "RENTALS AI COSTA",
+   "description": "Plataforma de alquileres temporarios en Monte Hermoso y Bahía Blanca potenciada por IA",
+   "url": "https://rentalsaicosta.com",
+   "logo": "https://rentalsaicosta.com/images/logo.png",
+   "image": "https://rentalsaicosta.com/og-image.jpg",
+   "telephone": "+54-291-XXXXXXX",
+   "email": "info@rentalsaicosta.com",
+   "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Monte Hermoso",
+     "addressRegion": "Buenos Aires",
+     "addressCountry": "AR"
+   },
+   "areaServed": [
+     {
+       "@type": "City",
+       "name": "Monte Hermoso"
+     },
+     {
+       "@type": "City",
+       "name": "Bahía Blanca"
+     }
+   ],
+   "priceRange": "$$$",
+   "openingHours": "Mo-Su 00:00-23:59",
+   "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "4.9",
+     "reviewCount": "127"
+   },
+   "sameAs": [
+     "https://www.facebook.com/rentalsaicosta",
+     "https://www.instagram.com/rentalsaicosta"
+   ]
+ }
+ </script>
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <script type="module" crossorigin src="/assets/index-BBN-RIRi.js"></script>
+   <link rel="stylesheet" crossorigin href="/assets/index-BVmFfJ6w.css">
+ </head>
+ <body>
+ <div id="root"></div>
+ <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
+ <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #FFD700;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #FFD700;
-            color: #333;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 2rem;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            text-align: center;
-            margin: 1rem;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #FFD700;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content {
-                padding: 1rem;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="hero">
-        <div class="hero-content">
-            <h1>GESTIÓN INTELIGENTE<br><span style="color: #FFD700;">PARA TUS ALQUILERES</span></h1>
-            <p class="hero-subtitle">Integración directa con Airbnb, Booking y más + Soporte completo para maximizar tu ocupación</p>
-            <p style="margin-bottom: 2rem;">Sincronización automática + IA 24/7</p>
-            <h2 style="color: #FFD700; font-size: 2rem; margin-bottom: 2rem;">CERO TRABAJO MANUAL</h2>
-
-            <div class="features">
-                <div class="feature-card">
-                    <h3>🏠 GESTIÓN MANUAL</h3>
-                    <ul style="list-style: none; text-align: left;">
-                        <li>📝 Actualizaciones manuales</li>
-                        <li>💔 Calendarios desincronizados</li>
-                        <li>🐌 Respuestas lentas</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>⚡ CON RENTALS AI</h3>
-                    <ul style="list-style: none; text-align: left;">
-                        <li>🔗 Integración directa</li>
-                        <li>⚡ Sincronización automática</li>
-                        <li>🤖 IA que nunca duerme</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">300%</div>
-                    <div class="stat-label">Más Reservas</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Atención IA</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">0</div>
-                    <div class="stat-label">Trabajo Manual</div>
-                </div>
-            </div>
-
-            <a href="#contact" class="cta-button">🚀 Empezar Ahora</a>
-        </div>
-    </div>
-
-    <!-- Widget ElevenLabs - Agente Matías -->
-    <elevenlabs-convai agent-id="agent_0801k6k3rfksf7ma9ywn4jk34w8g"></elevenlabs-convai>
-    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-</body>
+ <!-- Widget ElevenLabs - Agente Matías -->
+ <elevenlabs-convai agent-id="agent_0801k6k3rfksf7ma9ywn4jk34w8g"></elevenlabs-convai>
+ <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+ </body>
 </html>
