@@ -12,6 +12,18 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev:client"],
       "port": 5173
+    },
+    {
+      "name": "Dashboard Backend (Express)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Users/francolarrarte/VITALBAHIA-DASHBOARD", "run", "dev:server"],
+      "port": 3002
+    },
+    {
+      "name": "Dashboard Frontend (Vite)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Users/francolarrarte/VITALBAHIA-DASHBOARD", "run", "dev:client"],
+      "port": 5174
     }
   ]
 }
