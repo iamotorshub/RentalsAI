@@ -1,0 +1,45 @@
+{
+  "name": "vitalbahia-chatbot",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "tsx watch server/index.ts",
+    "dev:client": "vite",
+    "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist/server",
+    "start": "NODE_ENV=production node dist/server/index.js",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@remotion/player": "^4.0.277",
+    "@supabase/supabase-js": "^2.98.0",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.3.1",
+    "express": "^4.21.2",
+    "framer-motion": "^11.13.1",
+    "openai": "^6.25.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-tsparticles": "^2.12.2",
+    "react-type-animation": "^3.2.0",
+    "remotion": "^4.0.277",
+    "tsparticles": "^2.12.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "esbuild": "^0.25.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.19"
+  }
+}

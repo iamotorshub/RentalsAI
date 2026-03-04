@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────────────────────
+   CSS CUSTOM PROPERTIES
+────────────────────────────────────────────────────────────── */
+:root {
+  --bg-deep: #020812;
+  --bg-base: #050A14;
+  --bg-card: #080F1E;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.12);
+  --cyan-neon: #00D4FF;
+  --violet-tech: #7C3AED;
+  --mint: #10B981;
+  --text-primary: #F0F4FF;
+  --text-secondary: rgba(240, 244, 255, 0.65);
+  --text-muted: rgba(240, 244, 255, 0.35);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   BASE RESET
+────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   CUSTOM SCROLLBAR
+────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.25);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.45);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   GLASSMORPHISM UTILITIES
+────────────────────────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(5, 10, 20, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   GRADIENT TEXT
+────────────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #00D4FF 0%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-mint {
+  background: linear-gradient(135deg, #10B981 0%, #00D4FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   NEON GLOW EFFECTS
+────────────────────────────────────────────────────────── */
+.neon-border {
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.15), inset 0 0 12px rgba(0, 212, 255, 0.05);
+}
+
+.neon-border:focus-within {
+  border-color: rgba(0, 212, 255, 0.7);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.35), inset 0 0 20px rgba(0, 212, 255, 0.08);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   ANIMATED BACKGROUND BLOBS
+────────────────────────────────────────────────────────── */
+.bg-blob-1 {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
+  top: -200px;
+  left: -200px;
+  animation: blob 12s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-blob-2 {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.07) 0%, transparent 70%);
+  bottom: -100px;
+  right: -100px;
+  animation: blob 15s ease-in-out infinite reverse;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-blob-3 {
+  position: fixed;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: blob 18s ease-in-out infinite 3s;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes blob {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(40px, -60px) scale(1.08); }
+  50% { transform: translate(-30px, 30px) scale(0.95); }
+  75% { transform: translate(25px, 50px) scale(1.04); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   GRID BACKGROUND
+────────────────────────────────────────────────────────── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   CHAT BUBBLES
+────────────────────────────────────────────────────────── */
+.bubble-user {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.18) 0%, rgba(124, 58, 237, 0.12) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  box-shadow: 0 4px 24px rgba(0, 212, 255, 0.1);
+}
+
+.bubble-tiani {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   SEND BUTTON
+────────────────────────────────────────────────────────── */
+.send-btn {
+  background: linear-gradient(135deg, #00D4FF 0%, #7C3AED 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.45);
+}
+
+.send-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.send-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   ONLINE INDICATOR
+────────────────────────────────────────────────────────── */
+.online-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+  animation: pulse-online 2s ease-in-out infinite;
+}
+
+@keyframes pulse-online {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(16, 185, 129, 0.8); }
+  50% { opacity: 0.7; box-shadow: 0 0 16px rgba(16, 185, 129, 1); }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   INPUT FIELD
+────────────────────────────────────────────────────────── */
+.chat-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  resize: none;
+  width: 100%;
+}
+
+.chat-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   POWERED BADGE
+────────────────────────────────────────────────────────── */
+.powered-badge {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 99px;
+  padding: 4px 12px;
+  font-size: 0.6875rem;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+  color: rgba(0, 212, 255, 0.85);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   INTRO OVERLAY
+────────────────────────────────────────────────────────── */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   RESPONSIVE
+────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .chat-container {
+    border-radius: 0;
+    height: 100vh;
+    max-height: 100vh;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   ANIMATIONS
+────────────────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-fadeInUp { animation: fadeInUp 0.5s ease forwards; }
+.animate-fadeIn   { animation: fadeIn 0.4s ease forwards; }

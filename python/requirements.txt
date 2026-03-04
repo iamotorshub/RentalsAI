@@ -1,0 +1,6 @@
+# Phase 2: NotebookLM RAG Bridge
+# Install: pip install -r requirements.txt
+notebooklm-py[browser]>=0.4.0
+fastapi>=0.115.0
+uvicorn>=0.32.0
+httpx>=0.27.0
