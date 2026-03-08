@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import mhLogo from "../assets/motorshub-logo-white.png";
 
 export default function PoweredBadge() {
   return (
@@ -18,8 +19,8 @@ export default function PoweredBadge() {
         🔒
       </motion.span>
 
-      {/* Badge pill */}
-      <div className="powered-badge">
+      {/* Badge pill with MH logo */}
+      <div className="powered-badge" style={{ display: "flex", alignItems: "center", gap: "6px" }}>
         <motion.span
           animate={{ opacity: [0.6, 1, 0.6] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -27,7 +28,12 @@ export default function PoweredBadge() {
         >
           ◆
         </motion.span>
-        RAG Powered by MotorsHub
+        RAG Powered by
+        <img
+          src={mhLogo}
+          alt="IA MotorsHub"
+          style={{ height: "14px", objectFit: "contain", opacity: 0.85, verticalAlign: "middle" }}
+        />
         <motion.span
           animate={{ opacity: [0.6, 1, 0.6] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import vbLogo from "../assets/vitalbahia-logo.png";
 
 export default function TianiHeader() {
   return (
@@ -66,23 +67,13 @@ export default function TianiHeader() {
         </div>
       </div>
 
-      {/* Right: clinic info + badge */}
+      {/* Right: VitalBahía logo */}
       <div className="flex flex-col items-end gap-1">
-        <div className="flex items-center gap-2">
-          {/* Pulse animation around the hospital icon */}
-          <motion.div
-            animate={{ scale: [1, 1.08, 1] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <span className="text-base">🏥</span>
-          </motion.div>
-          <span
-            className="text-xs font-medium hidden sm:block"
-            style={{ color: "var(--text-secondary)", fontFamily: "'Space Grotesk', sans-serif" }}
-          >
-            Centro Médico VitalBahía
-          </span>
-        </div>
+        <img
+          src={vbLogo}
+          alt="Centro Médico VitalBahía"
+          style={{ height: "36px", objectFit: "contain", opacity: 0.92 }}
+        />
         <span className="text-xs" style={{ color: "var(--text-muted)" }}>
           Alsina 450, Bahía Blanca
         </span>
