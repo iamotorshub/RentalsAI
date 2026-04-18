@@ -13,6 +13,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import GuaranteeSection from "@/components/GuaranteeSection";
 import IncomeCalculator from "@/components/IncomeCalculator";
 import WhatsAppCTA from "@/components/WhatsAppCTA";
+import CalendlyButton from "@/components/CalendlyButton";
 
 function RentalsAILanding() {
   return (
@@ -43,6 +44,9 @@ function RentalsAILanding() {
       
       {/* WhatsApp CTA (Floating) */}
       <WhatsAppCTA />
+
+      {/* Calendly - Reservar Reunión */}
+      <CalendlyButton />
     </div>
   );
 }
